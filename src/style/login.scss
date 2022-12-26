@@ -84,8 +84,9 @@
         color: #ffffff;
         border-radius: 0px 20px;
         border: 0;
+        font-size: 1.2rem;
         margin-top: 2.5rem;
-        transition: all 2s ;
+        transition: 2s;
         cursor: pointer;
         &:hover {
         background: linear-gradient(180deg, rgba(172, 32, 193, 0.6) 35.29%, rgba(43, 30, 192, 0.474) 100%);

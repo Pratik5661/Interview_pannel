@@ -33,14 +33,36 @@
         margin-top: 1rem;
         margin-bottom: 1rem;            
 
-        &::placeholder {
-            padding: 1rem;
-            font-size: 1.2rem;
-            font-family: Imprima;
-            color: #AEADAD;
-        }
+            &::placeholder {
+                padding: 1rem;
+                font-size: 1.2rem;
+                font-family: Imprima;
+                color: #AEADAD;
+            }
     }
 
+    > div > select {
+        width: 21rem;   
+        height: 3rem;
+        border-radius: 0px 15px;
+        border-color: rgb(146, 146, 240);
+        border: 1.5px;
+        outline: 0;
+        margin-top: 0.8rem;
+        margin-bottom: 1rem; 
+        font-family: Imprima;
+        font-size: 1.2rem;
+        // padding: 1rem;
+        color: #AEADAD;
+        cursor: pointer;
+        
+        > option {
+                padding: 1rem;
+                font-size: 1.2rem;
+                font-family: Imprima;
+                color: #AEADAD;
+        }
+    }
     > div > button {
         text-align: center;
         background: linear-gradient(180deg, rgba(125, 23, 141, 0.6) 35.29%, rgba(22, 10, 151, 0.474) 100%);
@@ -48,16 +70,21 @@
         width: 13rem;
         height: 3rem;
         border: 0;
-        margin-left: 4.6rem;
+        margin-left: 4rem;
         color: #ffffff;
         font-family: Inria Serif; 
         text-align: center;
         font-weight: 700;
         font-size: 1.5rem;
         cursor: pointer;
-
+        text-decoration: none;
         &:hover {
         background: linear-gradient(180deg, rgba(172, 32, 193, 0.6) 35.29%, rgba(43, 30, 192, 0.474) 100%);
+        }
+
+        > a {
+            text-decoration: none;
+            color: #ffffff;
         }
 
     }
