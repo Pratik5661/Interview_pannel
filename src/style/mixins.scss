@@ -1,0 +1,30 @@
+@mixin text-input ($margin){
+    width: 21rem;
+    height: 3rem;
+    border-radius: 0px 15px;
+    border-color: rgb(146, 146, 240);
+    border: 1.5px;
+    outline: 0;
+    padding: 1rem;
+    margin: $margin;
+    &::placeholder {
+        font-size: 1.2rem;
+        font-family: Imprima;
+        color: #AEADAD;
+    }
+}
+
+@mixin button{
+    background: linear-gradient(180deg, rgba(125, 23, 141, 0.6) 35.29%, rgba(22, 10, 151, 0.474) 100%);
+    width: 13rem;
+    height: 3rem;
+    color: #ffffff;
+    border-radius: 0px 20px;
+    border: 0;
+    font-size: 1.2rem;
+    margin-top: 2.5rem;
+    transition: 2s;
+    &:hover {
+        background: linear-gradient(180deg, rgba(172, 32, 193, 0.6) 35.29%, rgba(43, 30, 192, 0.474) 100%);
+    }
+}
