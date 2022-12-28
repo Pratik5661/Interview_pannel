@@ -12,7 +12,7 @@ const SideNav = () => {
 
                 <div className="sidenav__navs">
                     <Nav defaultActiveKey="/home" className="flex-column">
-                        <Nav.Link href="/home">
+                        <Nav.Link href="/admin/dashboard">
                             <FaUserCircle /> Dashboard
                         </Nav.Link>
                         <Nav.Link eventKey="link-1">

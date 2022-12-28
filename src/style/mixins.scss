@@ -1,3 +1,5 @@
+@import '../style/colors.scss';
+
 @mixin text-input ($margin){
     width: 21rem;
     height: 3rem;
@@ -27,4 +29,18 @@
     &:hover {
         background: linear-gradient(180deg, rgba(172, 32, 193, 0.6) 35.29%, rgba(43, 30, 192, 0.474) 100%);
     }
+}
+
+@mixin page-header($fontSize, $width){
+    border-radius: 0px 15px;
+    border-color: rgb(146, 146, 240);
+    border: 1.5px;
+    outline: 0;
+    background-color: $nav-color;
+    color: $colors-white;
+    padding: 10px;
+    text-align: center;
+    width: $width;
+    font-size: $fontSize;
+    letter-spacing: 5px;
 }
