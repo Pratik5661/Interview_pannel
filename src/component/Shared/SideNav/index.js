@@ -15,8 +15,8 @@ const SideNav = () => {
 
                 <div className="sidenav__navs">
                     <Nav defaultActiveKey="/home" className="flex-column">
-                        <Nav.Link href="/home">
-                            <MdDashboard /> Dashboard
+                        <Nav.Link href="/admin/dashboard">
+                            <FaUserCircle /> Dashboard
                         </Nav.Link>
                         <Nav.Link eventKey="link-1">
                             <CgProfile />Profile</Nav.Link>
@@ -27,9 +27,6 @@ const SideNav = () => {
                             <MdPendingActions /> Pending Inteview
                         </Nav.Link>
                     </Nav>
-                {/* <aside>
-                    Log Out
-                </aside> */}
                 </div>
             </Col>
         </Row>
