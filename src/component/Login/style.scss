@@ -50,15 +50,15 @@
         justify-content: space-arou nd;
         text-align: center;
 
-        // p{
+        p{
 
-        //     width: 50%;
-        //     display: flex;
-        //     // flex-direction: row;
-        //     justify-content: space-arou nd;
-        //     text-align: center;
-        //     color:#ffffff;
-        // }
+            width: 50%;
+            display: flex;
+            // flex-direction: row;
+            justify-content: space-arou nd;
+            text-align: center;
+            color:#ffffff;
+        }
 
         label {
             color: #ffffff;
@@ -68,7 +68,6 @@
 
     }
    
-
     button {
         @include mixins.button
     }
