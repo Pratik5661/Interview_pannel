@@ -1,6 +1,9 @@
 import React from "react";
 import { Row, Col, Nav } from 'react-bootstrap';
-import { FaUserCircle, FaRegUser } from 'react-icons/fa'
+import { FaUserCircle} from 'react-icons/fa'
+import {MdDashboard, MdPendingActions} from 'react-icons/md'
+import {CgProfile} from 'react-icons/cg'
+import {SiVirustotal} from 'react-icons/si'
 import './style.scss';
 
 const SideNav = () => {
@@ -13,17 +16,20 @@ const SideNav = () => {
                 <div className="sidenav__navs">
                     <Nav defaultActiveKey="/home" className="flex-column">
                         <Nav.Link href="/home">
-                            <FaUserCircle /> Dashboard
+                            <MdDashboard /> Dashboard
                         </Nav.Link>
                         <Nav.Link eventKey="link-1">
-                            <FaUserCircle />Profile</Nav.Link>
+                            <CgProfile />Profile</Nav.Link>
                         <Nav.Link eventKey="link-2">
-                            <FaUserCircle /> Total Inteview
+                            <SiVirustotal /> Total Inteview
                         </Nav.Link>
                         <Nav.Link eventKey="link-2">
-                            <FaUserCircle /> Pending Inteview
+                            <MdPendingActions /> Pending Inteview
                         </Nav.Link>
                     </Nav>
+                {/* <aside>
+                    Log Out
+                </aside> */}
                 </div>
             </Col>
         </Row>
