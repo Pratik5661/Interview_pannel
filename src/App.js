@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './component/Login';
 import Registration from './component/Registration';
-import SideNav from './component/Shared/SideNav/index';
+// import SideNav from './component/Shared/SideNav/index';
 import AdminPanel from './component/AdminPanel/index';
 import Layout from './component/Layout';
 import './style/style.scss';

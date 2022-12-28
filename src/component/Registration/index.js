@@ -15,9 +15,10 @@ const Registration = () => {
           <Col sm={12} className='registration__form'>
             <input type="text" placeholder='Full Name' className='registration__text' />
             <input type="text" placeholder='Mobile No.' className='registration__text' />
+            <input type="text" placeholder='Email' className='registration__text' />
             <SelectBox options={[{text:'Choose your role'},{text:'Interviewer'},{text:'Developer'}]} />
             <input type="password" placeholder='Create Password' className='registration__text' />
-            <button type='submit'>SUBMIT</button>
+            <button type='submit'>Next</button>
             <h6 className='mt-3'>Already Registered ? <Link to='/login'>Log In</Link></h6>
           </Col>
         </Row>

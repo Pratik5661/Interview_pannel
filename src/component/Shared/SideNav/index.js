@@ -4,6 +4,7 @@ import { FaUserCircle} from 'react-icons/fa'
 import {MdDashboard, MdPendingActions} from 'react-icons/md'
 import {CgProfile} from 'react-icons/cg'
 import {SiVirustotal} from 'react-icons/si'
+import {GiSkills} from 'react-icons/gi'
 import './style.scss';
 
 const SideNav = () => {
@@ -16,7 +17,7 @@ const SideNav = () => {
                 <div className="sidenav__navs">
                     <Nav defaultActiveKey="/home" className="flex-column">
                         <Nav.Link href="/admin/dashboard">
-                            <FaUserCircle /> Dashboard
+                            <MdDashboard /> Dashboard
                         </Nav.Link>
                         <Nav.Link eventKey="link-1">
                             <CgProfile />Profile</Nav.Link>
@@ -25,6 +26,9 @@ const SideNav = () => {
                         </Nav.Link>
                         <Nav.Link eventKey="link-2">
                             <MdPendingActions /> Pending Inteview
+                        </Nav.Link>
+                        <Nav.Link eventKey="link-2">
+                            <GiSkills /> Skills
                         </Nav.Link>
                     </Nav>
                 </div>
