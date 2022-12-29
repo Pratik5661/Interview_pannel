@@ -5,7 +5,7 @@ import Registration from './component/Registration';
 import AdminPanel from './component/AdminPanel/index';
 import Layout from './component/Layout';
 import './style/style.scss';
-
+import Verifaction from './component/Registration/verification';
 
 function App() {
 
@@ -14,7 +14,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/registration' element={<Registration />} />
+          <Route path='/registration' element={<Registration />} >
+          </Route>
+          <Route path='/verfication' element={<Verifaction />} />
           <Route path='/admin' element={<Layout />} >
             <Route path='/admin/dashboard' element={<AdminPanel />} />
           </Route>

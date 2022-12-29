@@ -20,7 +20,7 @@ const SideNav = () => {
                             <MdDashboard /> Dashboard
                         </Nav.Link>
                         <Nav.Link eventKey="link-1">
-                            <CgProfile />Profile</Nav.Link>
+                            <CgProfile />Update Profile</Nav.Link>
                         <Nav.Link eventKey="link-2">
                             <SiVirustotal /> Total Inteview
                         </Nav.Link>
