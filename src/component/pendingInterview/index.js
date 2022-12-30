@@ -4,7 +4,7 @@ import SelectBox from "../Shared/Select";
 const Interviewer = ()=> {
     return (
         <>
-    <SelectBox className='select' options={[{text:'Choose your role'},{text:'Interviewer'},{text:'Developer'}]} />
+        <SelectBox className='select' options={[{text:'Select'},{text:'All'},{text:'Pending'}, {text: "Approve"}]} />
         <Table  bordered hover variant='light' className='table my-5 table-striped'>
         <thead>
           <tr>
