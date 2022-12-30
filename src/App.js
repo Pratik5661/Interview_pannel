@@ -6,6 +6,10 @@ import AdminPanel from './component/AdminPanel/index';
 import Layout from './component/Layout';
 import './style/style.scss';
 import Verifaction from './component/Registration/verification';
+import UpdateProfile from './component/updateProfile';
+import TotalInterview from './component/totalInterview';
+import Interviewer from './component/pendingInterview';
+
 
 function App() {
 
@@ -19,6 +23,9 @@ function App() {
           <Route path='/verfication' element={<Verifaction />} />
           <Route path='/admin' element={<Layout />} >
             <Route path='/admin/dashboard' element={<AdminPanel />} />
+            <Route path='/admin/update_profile' element={<UpdateProfile />} />
+            <Route path='/admin/total_Interview' element={<TotalInterview />} />
+            <Route path='/admin/interviewer' element={<Interviewer />} />
           </Route>
         </Routes>
       </Router>

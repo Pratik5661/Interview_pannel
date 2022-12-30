@@ -19,13 +19,13 @@ const SideNav = () => {
                         <Nav.Link href="/admin/dashboard">
                             <MdDashboard /> Dashboard
                         </Nav.Link>
-                        <Nav.Link eventKey="link-1">
+                        <Nav.Link eventKey="link-1" href="/admin/update_profile">
                             <CgProfile />Update Profile</Nav.Link>
-                        <Nav.Link eventKey="link-2">
+                        <Nav.Link eventKey="link-2"  href="/admin/total_Interview">
                             <SiVirustotal /> Total Inteview
                         </Nav.Link>
-                        <Nav.Link eventKey="link-2">
-                            <MdPendingActions /> Pending Inteview
+                        <Nav.Link eventKey="link-2" href="/admin/interviewer">
+                            <MdPendingActions /> Interviewer
                         </Nav.Link>
                         <Nav.Link eventKey="link-2">
                             <GiSkills /> Skills

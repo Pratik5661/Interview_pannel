@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
     return (
-        <Row>
+        <Row style={{width: '100%'}}>
             <Col md={3}>
                 <SideNav />
             </Col>

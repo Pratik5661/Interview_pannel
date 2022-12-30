@@ -2,6 +2,7 @@
 @import '../../style/colors.scss';
 
 .adminPanel{
+    overflow: hidden;
     &__heading{
         @include mixins.page-header(25px,300px);
     }
