@@ -14,7 +14,7 @@ const Verifaction = () => {
           <Row>
             <Col sm={12} className='registration__form'>
               <input type="text" placeholder='Enter OTP' className='registration__text' />
-              <input type="password" placeholder='Create password' className='registration__text' />
+              <input type="password" placeholder='Enter password' className='registration__text' />
               <input type="password" placeholder='Re-enter password' className='registration__text' />
               {/* <SelectBox options={[{text:'Choose your role'},{text:'Interviewer'},{text:'Developer'}]} /> */}
               {/* <input type="password" placeholder='Create Password' className='registration__text' /> */}
