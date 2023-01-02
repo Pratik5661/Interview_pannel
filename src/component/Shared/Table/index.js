@@ -1,12 +1,10 @@
 import React from "react";
-import SelectBox from "../Select";
 import { Table } from "react-bootstrap";
 // import '../Table/style.scss'
 const TableCmp = () => {
     return (
     <>
-    <SelectBox className='select' options={[{text:'Select'},{text:'All'},{text:'Pending'}, {text: "Approve"}]} />
-    <Table  bordered hover variant='light' className='table my-5 table-striped'>
+    <Table  bordered hover variant='light' className='table table-striped'>
       <thead>
         <tr>
           <th>S.no</th>
