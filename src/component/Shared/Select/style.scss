@@ -1,0 +1,16 @@
+
+.selectBox {
+    // width: 20rem;
+    position: relative;
+    top: 3rem;
+    font-family: Imprima;
+    color: #AEADAD;
+    cursor: pointer;
+    > option {
+        font-size: 1.2rem;
+        font-family: Imprima;
+        color: #AEADAD;
+        cursor: pointer;
+
+    }
+}

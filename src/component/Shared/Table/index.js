@@ -1,7 +1,7 @@
 import React from "react";
 import SelectBox from "../Select";
 import { Table } from "react-bootstrap";
-// import '../Table/style.scss'
+import {MdEditNote} from 'react-icons/md'
 const TableCmp = () => {
     return (
     <>
@@ -17,6 +17,7 @@ const TableCmp = () => {
           <th>Date</th>
           <th>Status</th>
           <th>Feedback</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +30,7 @@ const TableCmp = () => {
           <td>1-1-2023</td>
           <td className='text-success'>Approve</td>
           <td>Clear</td>
+          <td><MdEditNote /></td>
         </tr>
         <tr>
         <td>2</td>
@@ -37,8 +39,9 @@ const TableCmp = () => {
           <td>React</td>
           <td>ABC</td>
           <td>1-1-2023</td>
-          <td>Approve</td>
+          <td className='text-success'>Approve</td>
           <td>Clear</td>
+          <td><MdEditNote /></td>
         </tr>
         <tr>
         <td>3</td>
@@ -47,8 +50,9 @@ const TableCmp = () => {
           <td>React</td>
           <td>ABC</td>
           <td>1-1-2023</td>
-          <td>Approve</td>
+          <td className='text-danger'>Pending</td>
           <td>Clear</td>  
+          <td><MdEditNote /></td>
         </tr>
         <tr>
         <td>4</td>
@@ -57,8 +61,9 @@ const TableCmp = () => {
           <td>React</td>
           <td>ABC</td>
           <td>1-1-2023</td>
-          <td>Approve</td>
-          <td>Clear</td>  
+          <td className='text-success'>Approve</td>
+          <td>Clear</td> 
+          <td><MdEditNote /></td>
         </tr>
         <tr>
         <td>5</td>
@@ -67,8 +72,9 @@ const TableCmp = () => {
           <td>React</td>
           <td>ABC</td>
           <td>1-1-2023</td>
-          <td>Approve</td>
-          <td>Clear</td>  
+          <td className='text-danger'>Pending</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
         </tr>
       </tbody>
     </Table>
