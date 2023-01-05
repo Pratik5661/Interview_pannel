@@ -7,4 +7,7 @@ cursor: pointer;
 
 .select {
     width: 21%;
+     > option {
+        cursor: pointer;
+     }
 }

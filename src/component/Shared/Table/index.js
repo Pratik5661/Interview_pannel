@@ -1,12 +1,10 @@
 import React from "react";
-import SelectBox from "../Select";
 import { Table } from "react-bootstrap";
 import {MdEditNote} from 'react-icons/md'
 const TableCmp = () => {
     return (
     <>
-    <SelectBox className='select' options={[{text:'Select'},{text:'All'},{text:'Pending'}, {text: "Approve"}]} />
-    <Table  bordered hover variant='light' className='table my-5 table-striped'>
+    <Table  bordered hover variant='light' className='table table-striped'>
       <thead>
         <tr>
           <th>S.no</th>
@@ -73,6 +71,61 @@ const TableCmp = () => {
           <td>ABC</td>
           <td>1-1-2023</td>
           <td className='text-danger'>Pending</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
+        </tr>
+        <tr>
+        <td>6</td>
+          <td>Pratik</td>
+          <td>Chaudhary</td>
+          <td>React</td>
+          <td>ABC</td>
+          <td>1-1-2023</td>
+          <td className='text-danger'>Pending</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
+        </tr>
+        <tr>
+        <td>7</td>
+          <td>Pratik</td>
+          <td>Chaudhary</td>
+          <td>React</td>
+          <td>ABC</td>
+          <td>1-1-2023</td>
+          <td className='text-success'>Approve</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
+        </tr>
+        <tr>
+        <td>8</td>
+          <td>Pratik</td>
+          <td>Chaudhary</td>
+          <td>React</td>
+          <td>ABC</td>
+          <td>1-1-2023</td>
+          <td className='text-success'>Approve</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
+        </tr>
+        <tr>
+        <td>9</td>
+          <td>Pratik</td>
+          <td>Chaudhary</td>
+          <td>React</td>
+          <td>ABC</td>
+          <td>1-1-2023</td>
+          <td className='text-danger'>Pending</td>
+          <td>Clear</td>
+          <td><MdEditNote /></td>
+        </tr>
+        <tr>
+        <td>10</td>
+          <td>Pratik</td>
+          <td>Chaudhary</td>
+          <td>React</td>
+          <td>ABC</td>
+          <td>1-1-2023</td>
+          <td className='text-success'>Approve</td>
           <td>Clear</td>
           <td><MdEditNote /></td>
         </tr>

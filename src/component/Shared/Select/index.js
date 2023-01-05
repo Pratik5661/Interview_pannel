@@ -1,8 +1,8 @@
 import Form from 'react-bootstrap/Form';
-import "./style.scss"
-const SelectBox = ({options})=> {
+
+const SelectBox = ({options, name, onChange})=> {
     return (
-      <Form.Select aria-label="Default select example" className='selectBox' style={{width: '21rem'}}>
+      <Form.Select aria-label="Default select example" name={name} onChange={onChange} >
         {
             (options || []).map(option=>(
                 <option value={option.value}>{option.text}</option>

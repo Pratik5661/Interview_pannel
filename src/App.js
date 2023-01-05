@@ -7,8 +7,8 @@ import Layout from './component/Layout';
 import './style/style.scss';
 import Verifaction from './component/Registration/verification';
 import UpdateProfile from './component/updateProfile';
-import TotalInterview from './component/totalInterview';
-import Interviewer from './component/pendingInterview';
+import TotalInterview from './component/Interviews';
+import Interviewer from './component/InterViewer';
 
 
 function App() {
