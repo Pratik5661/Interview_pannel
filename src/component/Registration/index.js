@@ -77,17 +77,22 @@ const Registration = () => {
                   <Col sm={12} className='registration__form'>
                     <div>
                     <input type="text" placeholder='Full Name' className='registration__text' name="fullName" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.fullName && touched.fullName && <span className='validationError'>{errors.fullName}</span>}
+                    {errors.fullName && touched.fullName && <div className='validationError ml-3'>{errors.fullName}</div>}
+                    </div>
+                    <div>
+                    <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
+                    {errors.mobile && <div className='validationError'>{errors.mobile}</div>}
                     </div>
 
-                    <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.mobile && <span className='validationError'>{errors.mobile}</span>}
-
+                    <div>
                     <input type="text" placeholder='Email' className='registration__text' name="email" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.email && <span className='validationError'>{errors.email}</span>}
+                    {errors.email && <div className='validationError'>{errors.email}</div>}
+                    </div>
 
+                    <div>
                     <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.role && <span className='validationError'>{errors.role}</span>}
+                    {errors.role && <div className='validationError'>{errors.role}</div>}
+                    </div>
 
                     <div className='file'>
                       <span className='resume'>Resume</span>
