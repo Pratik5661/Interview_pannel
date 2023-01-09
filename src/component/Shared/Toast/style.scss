@@ -1,0 +1,10 @@
+@import '../../../style/colors.scss';
+
+.toast_close{
+  background: none;
+  border: none;
+  margin-left: 5px;
+  font-size: 15px;
+  color: $colors-white;
+  line-height: 20px;
+}

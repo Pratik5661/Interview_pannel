@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import {axiosObject} from '../Shared/Api';
+import { axiosObject } from '../Shared/Api';
 import SelectBox from '../Shared/Select/index';
 import CustomToast from '../Shared/Toast/index';
 import './style.scss';
@@ -17,6 +17,7 @@ const formValidation = Yup.object().shape({
 })
 const Registration = () => {
   const [skills, setSkills] = useState([]);
+  const [snack, setSnack] = useState({});
   const navigate = useNavigate();
 
   const handleKeyDown = evt => {
@@ -36,21 +37,28 @@ const Registration = () => {
     setSkills(skills.filter(data => data !== skill));
   }
 
-  const goNext = () => {
-    navigate('/verfication')
+  const goNext = (email) => {
+    navigate(`/verfication?email=${email}`)
   }
 
-  const register = async(values)=> {
-    try{
+  const register = async (values) => {
+    try {
       const payload = {
         ...values,
         skills
       }
-      const response = await axiosObject.post(`register`,payload);
-      goNext()
-      console.log(response,'pp')
-    } catch(err){
-
+      const { data = {} } = await axiosObject.post(`register`, payload);
+      if (data.status === 'success') {
+        setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'success' });
+        setTimeout(() => {
+          goNext(values.email)
+        }, 1000)
+      }
+      else {
+        setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'warning' });
+      }
+    } catch (err) {
+      setSnack({ isShowSnack: true, snackMsg: err.response.data.message, variant: 'danger' });
     }
   }
 
@@ -76,22 +84,22 @@ const Registration = () => {
                 <form onSubmit={handleSubmit}>
                   <Col sm={12} className='registration__form'>
                     <div>
-                    <input type="text" placeholder='Full Name' className='registration__text' name="fullName" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.fullName && touched.fullName && <div className='validationError ml-3'>{errors.fullName}</div>}
+                      <input type="text" placeholder='Full Name' className='registration__text' name="fullName" onChange={handleChange} onBlur={handleBlur} />
+                      {errors.fullName && touched.fullName && <div className='validationError ml-3'>{errors.fullName}</div>}
                     </div>
                     <div>
-                    <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.mobile && <div className='validationError'>{errors.mobile}</div>}
-                    </div>
-
-                    <div>
-                    <input type="text" placeholder='Email' className='registration__text' name="email" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.email && <div className='validationError'>{errors.email}</div>}
+                      <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
+                      {errors.mobile && <div className='validationError'>{errors.mobile}</div>}
                     </div>
 
                     <div>
-                    <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
-                    {errors.role && <div className='validationError'>{errors.role}</div>}
+                      <input type="text" placeholder='Email' className='registration__text' name="email" onChange={handleChange} onBlur={handleBlur} />
+                      {errors.email && <div className='validationError'>{errors.email}</div>}
+                    </div>
+
+                    <div>
+                      <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
+                      {errors.role && <div className='validationError'>{errors.role}</div>}
                     </div>
 
                     <div className='file'>
@@ -131,7 +139,9 @@ const Registration = () => {
 
         </Row>
       </Col>
-      <CustomToast variant="success" />
+      {
+        snack.isShowSnack && <CustomToast variant={snack.variant} message={snack.snackMsg} handleClose={() => setSnack({ isShowSnack: false })} />
+      }
     </Row>
   )
 }
