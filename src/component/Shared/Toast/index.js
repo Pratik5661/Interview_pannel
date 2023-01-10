@@ -11,7 +11,7 @@ const CustomToast = ({ variant, message}) => {
 
             >
                 <Toast.Body className={variant === 'Dark' && 'text-white'}>
-                    {message}
+                    {message="sucess"}
                 </Toast.Body>
             </Toast>
         </ToastContainer>

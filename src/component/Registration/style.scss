@@ -3,7 +3,10 @@
 
 .registration {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    height: 110vh;
     background-image: $background;
 
     &__header {

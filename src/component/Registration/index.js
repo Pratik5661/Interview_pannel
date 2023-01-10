@@ -6,7 +6,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {axiosObject} from '../Shared/Api';
 import SelectBox from '../Shared/Select/index';
-import CustomToast from '../Shared/Toast/index';
+// import CustomToast from '../Shared/Toast/index';
 import './style.scss';
 
 const formValidation = Yup.object().shape({
@@ -131,7 +131,7 @@ const Registration = () => {
 
         </Row>
       </Col>
-      <CustomToast variant="success" />
+      {/* <CustomToast variant="success" /> */}
     </Row>
   )
 }
