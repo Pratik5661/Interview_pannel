@@ -8,10 +8,9 @@ const CustomToast = ({ variant, message}) => {
                 className="d-inline-block m-1"
                 bg={variant.toLowerCase()}
                 autohide
-
             >
                 <Toast.Body className={variant === 'Dark' && 'text-white'}>
-                    {message="sucess"}
+                    {message}
                 </Toast.Body>
             </Toast>
         </ToastContainer>

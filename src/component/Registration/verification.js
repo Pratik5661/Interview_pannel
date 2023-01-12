@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import 'react-toastify/dist/ReactToastify.css';
 import './style.scss';
 // import CustomToast from '../Shared/Toast/index';
-import {toast} from 'react-toastify'
-
+import { ToastContainer, toast } from 'react-toastify';
 const Verifaction = () => {
 
-  const toastt = () => {
-    toast("Success")  
+
+  let sucessToast = ()=>{
+    toast.success("Registration Sucessfull")
+  }
+
+  let warningToast = ()=> {
+    toast.warning("Fill the all details")
   }
   return (
     <>
@@ -22,11 +27,18 @@ const Verifaction = () => {
               <input type="text" placeholder='Enter OTP' className='registration__text' />
               <input type="password" placeholder='Enter password' className='registration__text' />
               <input type="password" placeholder='Re-enter password' className='registration__text' />
-              <button className='registration__btn mt-3' type='button' onClick={()=>toastt()}>Submit</button>
+              <button className='registration__btn mt-3' type='button' onClick={warningToast} >Submit</button>
               <h6 className='mt-3'>Already Registered ? <Link to='/login'>Log In</Link></h6>
             </Col>
           </Row>
         </Col>
+    {/* <CustomToast variant="success"  message="Success" /> */}
+    <ToastContainer 
+    closeOnClick={true}
+    pauseOnHover={false}
+    autoClose={false}
+    pauseOnFocusLoss={false}
+    />
       </Row>
     </>
   )
