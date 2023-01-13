@@ -7,15 +7,18 @@ import * as Yup from 'yup';
 import './style.scss';
 
 const formValidation = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required('Email is required'),
-  password: Yup.string().required('Role is required')
+  email: Yup.string().required('Username required'),
+  password: Yup.string().required('Password is required')
 })
 
 const Login = () => {
 
-  const login = async()=>{
+  const login = async(value)=>{
     try{
-
+      const payload = {
+        ...value,
+        
+      }
     } catch(err){
 
     }
@@ -35,7 +38,7 @@ const Login = () => {
       >
         {
           ({errors, handleChange, handleSubmit, touched, handleBlur }) => (
-            <form>
+            <form onSubmit={handleSubmit}>
               <Col md={12}>
                 <div className='login__header'>
                   <div><FaUserCircle /></div>
@@ -44,10 +47,10 @@ const Login = () => {
                 <Row>
                   <Col sm={12} md={12} className='login__form'>
                     <div>
-                    <input type="text" id="" placeholder='Username' className='login__text' name="email" />
+                    <input type="text" id="" placeholder='Username' className='login__text' name="email" onChange={handleChange} onBlur={handleBlur} />
                     {errors.email && touched.email && <div className='validationError ml-3'>{errors.email}</div>}
                     </div>
-                    <input type="text" placeholder='Enter your password' className='login__text' />
+                    <input type="text" placeholder='Enter your password' className='login__text'onChange={handleChange} onBlur={handleBlur} />
                     <div className="login__check">
                       <div>
                         <input type="checkbox" /> &nbsp;
@@ -59,7 +62,7 @@ const Login = () => {
                     </div>
                     <button type='submit'>Login</button>
                     <div>
-                      <h6 className='mt-3'>Don't have account an ? <Link to='/registration'>Sign Up</Link></h6>
+                      <h6 className='mt-3'>Don't have account an ? <Link to='/registration' className='signup_btn'>Sign Up</Link></h6>
                     </div>
                   </Col>
                 </Row>

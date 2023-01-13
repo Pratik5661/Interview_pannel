@@ -63,7 +63,7 @@ const Registration = () => {
   }
 
   return (
-    <Row className='registration'>
+    <Row className='registration' style={{"margin" : "0%"}}>
       <Col md={12}>
         <div className='registration__header'>
           <h1>Registration Form</h1>
@@ -89,17 +89,17 @@ const Registration = () => {
                     </div>
                     <div>
                       <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
-                      {errors.mobile && <div className='validationError'>{errors.mobile}</div>}
+                      {errors.mobile && <div className='validationError'><div className='validationErrorr'>{errors.mobile.slice(0,30)}</div></div>}
                     </div>
 
                     <div>
                       <input type="text" placeholder='Email' className='registration__text' name="email" onChange={handleChange} onBlur={handleBlur} />
-                      {errors.email && <div className='validationError'>{errors.email}</div>}
+                      {errors.email && <div className='validationError_email'>{errors.email}</div>}
                     </div>
 
                     <div>
                       <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
-                      {errors.role && <div className='validationError'>{errors.role}</div>}
+                      {errors.role && <div className='validationError_role'>{errors.role}</div>}
                     </div>
 
                     <div className='file'>
@@ -130,7 +130,7 @@ const Registration = () => {
 
                     <button className='registration__btn mt-3' type='submit'>Next</button>
                     {/* <Link to='/verfication' className='registration__btn next_btn mt-3'>Next</Link> */}
-                    <h6 className='mt-3'>Already Registered ? <Link to='/login'>Log In</Link></h6>
+                    <h6 className='mt-3'>Already Registered ? <Link to='/login' className='login_btn'>Log In</Link></h6>
                   </Col>
                 </form>
               )
