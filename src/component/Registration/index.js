@@ -18,6 +18,7 @@ const formValidation = Yup.object().shape({
 const Registration = () => {
   const [skills, setSkills] = useState([]);
   const [snack, setSnack] = useState({});
+  const [resume, setResume] = useState({});
   const navigate = useNavigate();
 
   const handleKeyDown = evt => {
@@ -45,7 +46,8 @@ const Registration = () => {
     try {
       const payload = {
         ...values,
-        skills
+        skills,
+        resume: resume.uploadedFile || ''
       }
       const { data = {} } = await axiosObject.post(`register`, payload);
       if (data.status === 'success') {
@@ -62,8 +64,23 @@ const Registration = () => {
     }
   }
 
+  const uploadFile = async (event) => {
+    if (event.target.files.length) {
+      const formData = new FormData();
+      formData.append('file', event.target.files[0]);
+      const { data = {} } = await axiosObject.post('upload', formData);
+      if (data.status === 'success') {
+        setResume({ fileName: event.target.files[0].name, uploadedFile: data.fileName });
+        setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'success' });
+      } else {
+        setSnack({ isShowSnack: true, snackMsg: 'unable to upload file', variant: 'error' });
+      }
+      event.target.value = null;
+    }
+  }
+
   return (
-    <Row className='registration' style={{"margin" : "0%"}}>
+    <Row className='registration' style={{ "margin": "0%" }}>
       <Col md={12}>
         <div className='registration__header'>
           <h1>Registration Form</h1>
@@ -89,7 +106,7 @@ const Registration = () => {
                     </div>
                     <div>
                       <input type="text" placeholder='Mobile No.' className='registration__text' name="mobile" onChange={handleChange} onBlur={handleBlur} />
-                      {errors.mobile && <div className='validationError'><div className='validationErrorr'>{errors.mobile.slice(0,30)}</div></div>}
+                      {errors.mobile && <div className='validationError'><div className='validationErrorr'>{errors.mobile.slice(0, 30)}</div></div>}
                     </div>
 
                     <div>
@@ -97,14 +114,31 @@ const Registration = () => {
                       {errors.email && <div className='validationError_email'>{errors.email}</div>}
                     </div>
 
-                    <div>
+                    <div className='mt-2'>
                       <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
                       {errors.role && <div className='validationError_role'>{errors.role}</div>}
                     </div>
 
-                    <div className='file'>
+                    {
+                      resume.fileName && (
+                        <div className='registration__tags mt-3'>
+                          <div className='tag-item'>{resume.fileName}
+                            <button
+                              type="button"
+                              className="button"
+                              onClick={()=>setResume({})}
+                            >
+                              &times;
+                            </button>
+                          </div>
+                        </div>
+                      )
+                    }
+
+
+                    <div className='file mt-3'>
                       <span className='resume'>Resume</span>
-                      <input type="file" id="actual-btn" hidden />
+                      <input type="file" id="actual-btn" hidden onChange={uploadFile} />
                       <label htmlFor="actual-btn">Choose File</label>
                     </div>
 

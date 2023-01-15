@@ -18,15 +18,16 @@ function App() {
       <Router>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/registration' element={<Registration />} >
-          </Route>
+          <Route path='/registration' element={<Registration />} />
           <Route path='/verfication' element={<Verifaction />} />
-          <Route path='/admin' element={<Layout />} >
-            <Route path='/admin/dashboard' element={<AdminPanel />} />
-            <Route path='/admin/update_profile' element={<UpdateProfile />} />
-            <Route path='/admin/total_Interview' element={<TotalInterview />} />
-            <Route path='/admin/interviewer' element={<Interviewer />} />
+          
+          <Route path='/' element={<Layout />} >
+            <Route path='/dashboard' element={<AdminPanel />} />
+            <Route path='/profile' element={<UpdateProfile />} />
+            <Route path='/total_Interview' element={<TotalInterview />} />
+            <Route path='/interviewer' element={<Interviewer />} />
           </Route>
+
         </Routes>
       </Router>
     </>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { Row, Col, Nav } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa'
 import { MdDashboard, MdPendingActions } from 'react-icons/md'
@@ -13,11 +13,20 @@ import './style.scss';
 
 const SideNav = () => {
     const [isNotActive, setNotActive] = useState(true);
+    const navigate = useNavigate();
     var barsIcon = <i className="fas fa-bars"></i>
     var crossIcon = <i className="fas fa-times-circle"></i>
+    let user = localStorage.getItem('user');
+    user = JSON.parse(user);
+
+    const logout = () => {
+        localStorage.clear();
+        navigate('/login');
+    }
+
     return (
         <div>
-            <div className={isNotActive ? "wrapper"  : "inactive wrapper"}>
+            <div className={isNotActive ? "wrapper" : "inactive wrapper"}>
                 <nav id="sidebar" className={isNotActive ? "active" : ""}>
                     <button
                         type="button"
@@ -32,25 +41,39 @@ const SideNav = () => {
                     </div>
 
                     <ul className="list-unstyled components">
-                        <li className="list-item">
-                            <MdDashboard />
-                            <Link to="/admin/dashboard">Dashboard</Link>
-                        </li>
-                        <li className="list-item">
-                            <SiVirustotal />
-                            <Link to="/admin/total_Interview">Interviews</Link>
-                        </li>
-                        <li className="list-item">
-                            <MdPendingActions />
-                            <Link to="/admin/interviewer">Interviewer</Link>
-                        </li>
-                        <li className="list-item">
-                            <CgProfile/>
-                            <Link to="/admin/update_profile">Update Profile</Link>
-                        </li>
-                        <li className="list-item">
+                        {
+                            user.role === 'Admin' && (
+                                <>
+                                    <li className="list-item">
+                                        <MdDashboard />
+                                        <Link to="/dashboard">Dashboard</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <SiVirustotal />
+                                        <Link to="/total_Interview">Interviews</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <MdPendingActions />
+                                        <Link to="/interviewer">Interviewer</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <MdPendingActions />
+                                        <Link to="/interviewer">Developers</Link>
+                                    </li>
+                                </>
+                            )
+                        }
+                        {
+                            user.role === "Developer" || user.role === "Interviewer" && (
+                                <li className="list-item">
+                                    <CgProfile />
+                                    <Link to="/profile">Profile</Link>
+                                </li>
+                            )
+                        }
+                        <li className="list-item" onClick={() => logout()}>
                             <GiSkills />
-                            <Link to="/organization-profile">Skills</Link>
+                            <Link>Logout</Link>
                         </li>
                     </ul>
                 </nav>
