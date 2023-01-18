@@ -58,7 +58,7 @@ const SideNav = () => {
                                     </li>
                                     <li className="list-item">
                                         <MdPendingActions />
-                                        <Link to="/interviewer">Developers</Link>
+                                        <Link to="/developer_panel">Developers</Link>
                                     </li>
                                 </>
                             )

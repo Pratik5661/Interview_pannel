@@ -9,8 +9,8 @@ import Verifaction from './component/Registration/verification';
 import UpdateProfile from './component/updateProfile';
 import TotalInterview from './component/Interviews';
 import Interviewer from './component/InterViewer';
-
-
+import Developer_Panel from './component/Developer\'s';
+import ForgetPassword from './component/Login/forgetPassword';
 function App() {
 
   return (
@@ -18,6 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/login' element={<Login />} />
+          <Route path='/forget_password' element={<ForgetPassword />} />
           <Route path='/registration' element={<Registration />} />
           <Route path='/verfication' element={<Verifaction />} />
           
@@ -26,6 +27,7 @@ function App() {
             <Route path='/profile' element={<UpdateProfile />} />
             <Route path='/total_Interview' element={<TotalInterview />} />
             <Route path='/interviewer' element={<Interviewer />} />
+            <Route path='/developer_panel' element={<Developer_Panel />} />
           </Route>
 
         </Routes>

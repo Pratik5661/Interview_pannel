@@ -71,14 +71,14 @@ function UpdateProfile() {
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
+        <Form.Group as={Col} md="6" controlId="validationCustom03" style={{"position" : "relative", "bottom" : "5px"}}>
           <Form.Label className='form_title'>Skills</Form.Label>
           <Form.Control type="text" placeholder="Skils..." required />
           <Form.Control.Feedback type="invalid">
             Please provide your Skills.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="6" controlId="validationCustom04">
+        <Form.Group as={Col} md="6" controlId="validationCustom04" style={{"position" : "relative", "bottom" : "4px"}}>
           <Form.Label className='form_title'>Update Skills</Form.Label>
           <Form.Control type="text" placeholder="Update skills..." required />
           <Form.Control.Feedback type="invalid">

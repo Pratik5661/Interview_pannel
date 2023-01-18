@@ -9,9 +9,10 @@ font-family: 'Inria Sans';
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
-line-height: 22px;
+// line-height: 20px;
 text-align: center;
-
+padding: 6px;
+margin: 0%;
 .form_title:focus {
     color: aquamarine;
     box-shadow: #99CC00;
