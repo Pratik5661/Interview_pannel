@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Login from './component/Login';
 import Registration from './component/Registration';
 // import SideNav from './component/Shared/SideNav/index';
@@ -11,8 +11,25 @@ import TotalInterview from './component/Interviews';
 import Interviewer from './component/InterViewer';
 import Developer_Panel from './component/Developer\'s';
 import ForgetPassword from './component/Login/forgetPassword';
-function App() {
 
+const CheckAuth = () => {
+  const navigate = useNavigate();
+  let user = localStorage.getItem('user');
+  if (user) {
+    user = JSON.parse(user);
+    if (user.role === 'Developer' || user.role === 'Interviewer') {
+      return <Layout />
+    } else if (user.role === 'Admin') {
+      return <Layout />
+    } else {
+      return <Navigate to="/login" />;
+    }
+  } else {
+    return <Navigate to="/login" />;
+  }
+}
+
+function App() {
   return (
     <>
       <Router>
@@ -21,8 +38,7 @@ function App() {
           <Route path='/forget_password' element={<ForgetPassword />} />
           <Route path='/registration' element={<Registration />} />
           <Route path='/verfication' element={<Verifaction />} />
-          
-          <Route path='/' element={<Layout />} >
+          <Route path='/' element={<CheckAuth />} >
             <Route path='/dashboard' element={<AdminPanel />} />
             <Route path='/profile' element={<UpdateProfile />} />
             <Route path='/total_Interview' element={<TotalInterview />} />
