@@ -1,0 +1,70 @@
+@import '../../style/colors.scss';
+
+.interview_schedule {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_submit {
+    position: relative;
+    top: 3rem;
+    background-color: #212364;
+    font-family: 'Mate SC';
+    color: FFFFFF;
+}
+.btn_submit:hover {
+    background-color: #383ca6;
+}
+
+.textarea {
+    position: relative;
+    top: 1.5rem;
+    outline: none;
+}
+
+textarea::placeholder {
+font-family: 'Mate SC';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+outline: none;
+}
+
+
+.date_picker {
+    display: flex;
+    position: relative;
+    top: 1rem;
+    // cursor: pointer;
+}
+
+.card_title {
+font-family: 'Mate SC';
+font-style: normal;
+font-weight: 400;
+font-size: 29px;
+position: relative;
+bottom: 1.5rem;
+// text-align: center;
+}
+
+.hours {
+    position: relative;
+    right: 10px;
+    cursor: pointer;
+}
+
+select {
+    width: 3.2rem;
+    position: relative;
+    bottom: 38px;
+}
+
+.time {
+    position: relative;
+    bottom: 25px;
+    font-family: 'Mate SC';
+font-style: normal;
+font-weight: 400;
+}

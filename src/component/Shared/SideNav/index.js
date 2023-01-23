@@ -6,6 +6,7 @@ import { MdDashboard, MdPendingActions } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { SiVirustotal } from 'react-icons/si'
 import { GiSkills } from 'react-icons/gi'
+import {AiFillSchedule} from 'react-icons/ai'
 // import {GrDocumentUpdate} from 'react-icons/gr'
 // import image from "../../../assets/React-icon.svg.png";
 
@@ -59,6 +60,10 @@ const SideNav = () => {
                                     <li className="list-item">
                                         <MdPendingActions />
                                         <Link to="/developer_panel">Developers</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <AiFillSchedule />
+                                        <Link to="/interivew_schedule">Interview Schedule</Link>
                                     </li>
                                 </>
                             )

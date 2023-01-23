@@ -86,8 +86,8 @@ function UpdateProfile() {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
-          <Form.Label className='form_title'>Experince</Form.Label>
-          <Form.Control type="number" placeholder="Experince..." required />
+          <Form.Label className='form_title'>Experience</Form.Label>
+          <Form.Control type="number" placeholder="Experience..." required />
           <Form.Control.Feedback type="invalid">
             Experince should in numbers.
           </Form.Control.Feedback>

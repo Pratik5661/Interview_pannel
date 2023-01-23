@@ -11,6 +11,7 @@ import TotalInterview from './component/Interviews';
 import Interviewer from './component/InterViewer';
 import Developer_Panel from './component/Developer\'s';
 import ForgetPassword from './component/Login/forgetPassword';
+import Interview_Schedule from './component/interview_schedule';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ function App() {
             <Route path='/total_Interview' element={<TotalInterview />} />
             <Route path='/interviewer' element={<Interviewer />} />
             <Route path='/developer_panel' element={<Developer_Panel />} />
+            <Route path='/interivew_schedule' element={<Interview_Schedule />} />
           </Route>
 
         </Routes>
