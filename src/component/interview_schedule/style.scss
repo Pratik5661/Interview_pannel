@@ -1,5 +1,13 @@
 @import '../../style/colors.scss';
 
+
+.main {
+    margin: 2rem;
+}
+.heading {
+    margin-left: 4.2rem;
+    font-family: sans-serif;
+}
 .interview_schedule {
     margin: 2rem;
     display: flex;
@@ -8,7 +16,7 @@
 
 .btn_submit {
     position: relative;
-    top: 3rem;
+    top: 1rem;
     background-color: #212364;
     font-family: 'Mate SC';
     color: FFFFFF;
@@ -19,7 +27,6 @@
 
 .textarea {
     position: relative;
-    top: 1.5rem;
     outline: none;
 }
 
@@ -29,6 +36,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 18px;
 outline: none;
+padding: 5px;
 }
 
 
@@ -46,7 +54,7 @@ font-weight: 400;
 font-size: 29px;
 position: relative;
 bottom: 1.5rem;
-// text-align: center;
+text-align: center;
 }
 
 .hours {
@@ -59,6 +67,8 @@ select {
     width: 3.2rem;
     position: relative;
     bottom: 38px;
+    font-family: sans-serif;
+    
 }
 
 .time {
@@ -67,4 +77,20 @@ select {
     font-family: 'Mate SC';
 font-style: normal;
 font-weight: 400;
+}
+.date {
+    position: relative;
+    bottom: 1.5rem;
+    left: 2.1rem;
+    font-family: 'Mate SC';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.message {
+    font-family: 'Mate SC';
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    top: 0.7rem;
 }
