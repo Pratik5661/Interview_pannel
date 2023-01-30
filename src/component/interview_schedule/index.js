@@ -18,7 +18,7 @@ function Interview_Schedule() {
       <DatePicker /> 
             <div className='hours'>
                 <p className='time'>Hours</p>
-                <select>
+                <select className='selcet_tag'>
                     <option value="1">01</option>
                     <option value="2">02</option>
                     <option value="3">03</option>
@@ -35,7 +35,7 @@ function Interview_Schedule() {
             </div>
             <div className='mint'>
             <p className='time'>Minutes</p>
-                <select>
+                <select className='select_tag_timing'>
                     <option value="1">00</option>
                     <option value="2">15</option>
                     <option value="3">30</option>

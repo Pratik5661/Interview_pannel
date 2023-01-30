@@ -63,7 +63,14 @@ text-align: center;
     cursor: pointer;
 }
 
-select {
+.selcet_tag {
+    width: 3.2rem;
+    position: relative;
+    bottom: 38px;
+    font-family: sans-serif;
+    
+}
+.select_tag_timing {
     width: 3.2rem;
     position: relative;
     bottom: 38px;
