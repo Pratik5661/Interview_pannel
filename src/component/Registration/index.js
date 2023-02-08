@@ -118,7 +118,7 @@ const Registration = () => {
                       <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
                       {errors.role && <div className='validationError_role'>{errors.role}</div>}
                     </div>
-
+                    
                     {
                       resume.fileName && (
                         <div className='registration__tags mt-3'>

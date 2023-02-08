@@ -12,6 +12,8 @@ import Interviewer from './component/InterViewer';
 import Developer_Panel from './component/Developer\'s';
 import ForgetPassword from './component/Login/forgetPassword';
 import Interview_Schedule from './component/interview_schedule';
+import LoginWithGoogle from './component/login with google';
+import BookingSlot from './component/Booking Slot/booking';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -28,7 +30,7 @@ const CheckAuth = () => {
   } else {
     return <Navigate to="/login" />;
   }
-}
+} 
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/login' element={<Login />} />
+          <Route path='/login_google' element={<LoginWithGoogle />} />
           <Route path='/forget_password' element={<ForgetPassword />} />
           <Route path='/registration' element={<Registration />} />
           <Route path='/verfication' element={<Verifaction />} />
@@ -46,6 +49,7 @@ function App() {
             <Route path='/interviewer' element={<Interviewer />} />
             <Route path='/developer_panel' element={<Developer_Panel />} />
             <Route path='/interivew_schedule' element={<Interview_Schedule />} />
+            <Route path='/booking' element={<BookingSlot />} />
           </Route>
 
         </Routes>

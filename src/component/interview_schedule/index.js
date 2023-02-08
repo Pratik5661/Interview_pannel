@@ -1,11 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import DatePicker from './datePicker';
-import './style.scss'
+import {Row, Col} from 'react-bootstrap'
 
+import './style.scss'
 
 function Interview_Schedule() {
   return (
+    <Row>
+      <Col md={15} sm={15}>
     <div className='main'>
         <h1 className='heading'>Interview Schedule</h1>
     <Card style={{ width: '30rem', height: '25rem' }} >
@@ -45,8 +48,8 @@ function Interview_Schedule() {
             </div>
       </div>
         <div className='textarea'>
-            <p className='message'>Enter your message :</p>
-                <textarea rows="4" cols="50" placeholder='message...'/> 
+            <p className='message'>Enter Your Message :</p>
+                <textarea rows="4" cols="50" placeholder='Message...'/> 
             </div>
       </div>
         <Card.Text>
@@ -56,6 +59,8 @@ function Interview_Schedule() {
       </Card.Body>
     </Card>
     </div>
+    </Col>
+    </Row>
   );
 }
 

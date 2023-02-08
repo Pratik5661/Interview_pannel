@@ -1,0 +1,53 @@
+@import '../../style/colors.scss';
+
+.email_input {
+    display: flex;
+    flex-direction: column;
+
+    // &::placeholder {
+    //     font-size: 3rem;
+    // }
+}
+
+.btn_continue {
+    width: 18rem;
+    height: 2.5rem;
+    position: relative;
+    top: 1.5rem;
+    font-size: 1.2rem;
+    font-family: nria Sans;
+
+}
+
+.btn_google {
+    position: relative;
+    // left: 8.3rem;
+
+    margin-left: 8rem;
+    top: 3rem;
+}
+
+.login_container {
+    margin-top: 6rem;
+}
+
+.input_email {
+    width: 22rem;
+    height: 3rem;
+
+    &::placeholder {
+        
+    }
+}
+
+.account {
+    position: relative;
+    top: 4rem;
+    font-family: nria Sans;
+    font-size: 1.2rem;
+}
+
+.sing_up {
+    text-decoration: none;
+    font-family: nria Sans;
+}
