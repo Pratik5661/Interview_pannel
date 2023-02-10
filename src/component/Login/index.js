@@ -86,7 +86,7 @@ const Login = () => {
                     <button type='submit' className='login__btn'>Login</button>
                     <Button
                       block
-                      variant="success"
+                      variant="danger"
                       className="mb-3 btn_google"
 
                     >

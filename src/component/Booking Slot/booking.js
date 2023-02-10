@@ -13,21 +13,21 @@ let BookingSlot = () => {
            <div className="show_times">
                 <ul>
                     <li className="active_time">
-                        <p>10:00AM</p>
+                        <p>1 Feb</p>
                     </li>
                 </ul>
            </div>
            <div className="show_times">
                 <ul>
                     <li className="active_time">
-                        <p>10:30AM</p>
+                        <p>2 Feb</p>
                     </li>
                 </ul>
            </div>
            <div className="show_times">
                 <ul>
                     <li className="active_time">
-                        <p>12:00AM</p>
+                        <p>3 Feb</p>
                     </li>
                 </ul>
            </div>
@@ -45,10 +45,10 @@ let BookingSlot = () => {
                         </div>
                        
                         <div className="time">
-                            <div className="time_2"><Link><p>10:00AM</p></Link></div>
-                            <div className="time_2"><Link>10:30AM</Link></div>
-                            <div className="time_2"><Link>11:00AM</Link></div>
-                            <div className="time_2"><Link>11:30AM</Link></div>
+                            <div className="time_2"><Link to='/slots'><p>10:00AM</p></Link></div>
+                            <div className="time_2"><Link to='/slots'>10:30AM</Link></div>
+                            <div className="time_2"><Link to='/slots'>11:00AM</Link></div>
+                            <div className="time_2"><Link to='/slots'>11:30AM</Link></div>
                             {/* <div className="time_2">10:00AM</div>
                             <div className="time_2">10:30AM</div>
                             <div className="time_2">11:00AM</div>

@@ -6,7 +6,7 @@ import { MdDashboard, MdPendingActions } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { SiVirustotal } from 'react-icons/si'
 import { GiSkills } from 'react-icons/gi'
-import {AiFillSchedule} from 'react-icons/ai'
+import { AiFillSchedule } from 'react-icons/ai'
 // import {GrDocumentUpdate} from 'react-icons/gr'
 // import image from "../../../assets/React-icon.svg.png";
 
@@ -19,6 +19,7 @@ const SideNav = () => {
     var crossIcon = <i className="fas fa-times-circle"></i>
     let user = localStorage.getItem('user');
     user = JSON.parse(user);
+    console.log(user.role)
 
     const logout = () => {
         localStorage.clear();
@@ -76,6 +77,10 @@ const SideNav = () => {
                                 </li>
                             )
                         }
+                        <li className="list-item">
+                            <AiFillSchedule />
+                            <Link to="/booking">Interview Schedule</Link>
+                        </li>
                         <li className="list-item" onClick={() => logout()}>
                             <GiSkills />
                             <Link>Logout</Link>

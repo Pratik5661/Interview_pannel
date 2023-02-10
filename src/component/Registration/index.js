@@ -165,7 +165,7 @@ const Registration = () => {
                     <button className='registration__btn mt-3' type='submit'>Next</button>
                     <Button
                       block
-                      variant="success"
+                      variant="danger"
                       className="mb-3 btn_google"
 
                     >
