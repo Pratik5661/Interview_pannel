@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -163,6 +163,14 @@ const Registration = () => {
                     />
 
                     <button className='registration__btn mt-3' type='submit'>Next</button>
+                    <Button
+                      block
+                      variant="success"
+                      className="mb-3 btn_google"
+
+                    >
+                      Sign up with Google
+                    </Button>
                     {/* <Link to='/verfication' className='registration__btn next_btn mt-3'>Next</Link> */}
                     <h6 className='mt-3'>Already Registered ? <Link to='/login' className='login_btn'>Log In</Link></h6>
                   </Col>

@@ -14,6 +14,7 @@ import ForgetPassword from './component/Login/forgetPassword';
 import Interview_Schedule from './component/interview_schedule';
 import LoginWithGoogle from './component/login with google';
 import BookingSlot from './component/Booking Slot/booking';
+import Slots from './component/Booking Slot/slots';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ function App() {
             <Route path='/developer_panel' element={<Developer_Panel />} />
             <Route path='/interivew_schedule' element={<Interview_Schedule />} />
             <Route path='/booking' element={<BookingSlot />} />
+            <Route path='slots' element={<Slots />} />
           </Route>
 
         </Routes>
