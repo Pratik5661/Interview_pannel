@@ -7,8 +7,7 @@ import { CgProfile } from 'react-icons/cg'
 import { SiVirustotal } from 'react-icons/si'
 import { GiSkills } from 'react-icons/gi'
 import { AiFillSchedule } from 'react-icons/ai'
-// import {GrDocumentUpdate} from 'react-icons/gr'
-// import image from "../../../assets/React-icon.svg.png";
+import {IoPeopleSharp} from 'react-icons/io5'
 
 import './style.scss';
 
@@ -59,13 +58,13 @@ const SideNav = () => {
                                         <Link to="/interviewer">Interviewer</Link>
                                     </li>
                                     <li className="list-item">
-                                        <MdPendingActions />
+                                        <IoPeopleSharp />
                                         <Link to="/developer_panel">Developers</Link>
                                     </li>
-                                    <li className="list-item">
+                                    {/* <li className="list-item">
                                         <AiFillSchedule />
                                         <Link to="/interivew_schedule">Interview Schedule</Link>
-                                    </li>
+                                    </li> */}
                                 </>
                             )
                         }
@@ -79,7 +78,7 @@ const SideNav = () => {
                         }
                         <li className="list-item">
                             <AiFillSchedule />
-                            <Link to="/booking">Interview Schedule</Link>
+                            <Link to="/booking">Interview <p className="schedule">Schedule</p></Link>
                         </li>
                         <li className="list-item" onClick={() => logout()}>
                             <GiSkills />
@@ -89,30 +88,6 @@ const SideNav = () => {
                 </nav>
             </div>
         </div>
-        // <Row className="sidenav">
-        //     <Col md={12}>
-        //         <div className="sidenav__avtar"><FaUserCircle /></div>
-
-        //         <div className="sidenav__navs">
-        //             <Nav defaultActiveKey="/home" className="flex-column">
-        //                 <Nav.Link href="/admin/dashboard">
-        //                     <MdDashboard /> Dashboard
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-1" href="/admin/update_profile">
-        //                     <CgProfile />Update Profile</Nav.Link>
-        //                 <Nav.Link eventKey="link-2"  href="/admin/total_Interview">
-        //                     <SiVirustotal /> Total Inteview
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-2" href="/admin/interviewer">
-        //                     <MdPendingActions /> Interviewer
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-2">
-        //                     <GiSkills /> Skills
-        //                 </Nav.Link>
-        //             </Nav>
-        //         </div>
-        //     </Col>
-        // </Row>
     )
 }
 

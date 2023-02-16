@@ -54,7 +54,7 @@ let TotalInterview = () => {
   return (
     <Row className='mt-3'>
       <Col md={12}>
-        <h3 className="mb-3">Interviewers List</h3>
+        <h3 className="mb-3">Interviews List</h3>
         <TableCmp tableData={getTableData()} />
       </Col>
     </Row>

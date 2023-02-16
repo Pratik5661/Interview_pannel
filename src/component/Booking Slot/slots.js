@@ -36,9 +36,9 @@ let Slots = () => {
                                     <div className="timing">10:00AM</div>
                                 </td>
                                 <td className="Row1">
-                                    <div className="seat"></div>
-                                    <div className="seat"></div>
-                                    <div className="seat"></div>
+                                    <div className="seat bg"></div>
+                                    <div className="seat bg"></div>
+                                    <div className="seat bg"></div>
                                     <div className="seat"></div>
                                     <div className="seat"></div>
                                 </td>

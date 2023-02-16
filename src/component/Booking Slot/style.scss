@@ -151,7 +151,7 @@
                             .seat {
                                 width: 10%;
                                 height: 40px;
-                                background-color: #ccc;
+                                // background-color: red;
                                 border: 1px solid #000;
                                 border-radius: 10px;
                                 font-size: 10px;
@@ -166,6 +166,13 @@
                                 color: #1ea83c;
                                 text-align: center;
                                 cursor: pointer;
+
+                                &:hover {
+                                    background-color: #1ea83c;
+                                }
+                            }
+                            .bg {
+                                background-color: gray;
                             }
                         }
                     }
