@@ -59,7 +59,7 @@ const SideNav = () => {
                                     </li>
                                     <li className="list-item">
                                         <IoPeopleSharp />
-                                        <Link to="/developer_panel">Developers</Link>
+                                        <Link to="/developer_panel">Candidate's</Link>
                                     </li>
                                     {/* <li className="list-item">
                                         <AiFillSchedule />
@@ -78,7 +78,7 @@ const SideNav = () => {
                         }
                         <li className="list-item">
                             <AiFillSchedule />
-                            <Link to="/booking">Interview <p className="schedule">Schedule</p></Link>
+                            <Link to="/schedule_interview">Interview <p className="schedule">Schedule</p></Link>
                         </li>
                         <li className="list-item" onClick={() => logout()}>
                             <GiSkills />

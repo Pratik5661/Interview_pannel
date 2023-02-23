@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import TableCmp from "../Shared/Table";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { axiosObject } from '../Shared/Api';
 import { MdEditNote } from 'react-icons/md'
+import {IoAdd} from 'react-icons/io5'
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";
 
@@ -55,6 +56,7 @@ let TotalInterview = () => {
     <Row className='mt-3'>
       <Col md={12}>
         <h3 className="mb-3">Interviews List</h3>
+        <Button className="add_interviwer"> <IoAdd /> Add Interview</Button>
         <TableCmp tableData={getTableData()} />
       </Col>
     </Row>

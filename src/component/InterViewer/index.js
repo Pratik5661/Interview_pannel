@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import TableCmp from "../Shared/Table";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { axiosObject } from '../Shared/Api';
 import { MdEditNote } from 'react-icons/md'
 import moment from 'moment';
+import {IoAdd} from 'react-icons/io5'
 import { useNavigate } from "react-router-dom";
+import './style.scss'
 
 let InterViewer = () => {
   const [interviewers, setInterviewers] = useState([]);
@@ -55,7 +57,8 @@ let InterViewer = () => {
     <Row className='mt-3'>
       <Col md={12}>
         <h3 className="mb-3">Interviewers List</h3>
-        <TableCmp tableData={getTableData()} />
+        <Button className="add_interviwer"><IoAdd /> Add Interviewer</Button>
+        <TableCmp className='interviwer_table' tableData={getTableData()} />
       </Col>
     </Row>
 
