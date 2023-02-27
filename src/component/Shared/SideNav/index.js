@@ -51,7 +51,7 @@ const SideNav = () => {
                                     </li>
                                     <li className="list-item">
                                         <SiVirustotal />
-                                        <Link to="/total_Interview">Interviews</Link>
+                                        <Link to="/interviews">Interviews</Link>
                                     </li>
                                     <li className="list-item">
                                         <MdPendingActions />

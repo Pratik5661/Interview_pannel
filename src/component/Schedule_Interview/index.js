@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import CustomToast from "../Shared/Toast";
 import SelectBox from "../Shared/Select";
 import { axiosObject } from '../../component/Shared/Api';
@@ -12,7 +13,8 @@ let Schedule_Interview = () => {
     const [snack, setSnack] = useState({});
     const [interviewers, setInterviewers] = useState([]);
     const [developers, setDevelopers] = useState([]);
-    const [scheduleData, setScheduleData] = useState({});
+    const [scheduleData, setScheduleData] = useState({ scheduleDate: new Date() });
+    const navigate = useNavigate();
 
     const getInterViewers = async () => {
         try {
@@ -48,6 +50,35 @@ let Schedule_Interview = () => {
         }
     }
 
+    const scheduleInterview = async () => {
+        try {
+            if (skills.length <= 0) {
+                setSnack({ isShowSnack: true, snackMsg: 'please enter skills', variant: 'error' });
+                return;
+            }
+
+            if (!(scheduleData.scheduleDate && scheduleData.duration && scheduleData.candidate && scheduleData.interviewType && scheduleData.interviewer && scheduleData.startTime)) {
+                setSnack({ isShowSnack: true, snackMsg: 'please enter all required fields', variant: 'error' });
+                return;
+            }
+            scheduleData['duration'] = Number(scheduleData.duration);
+
+            const response = await axiosObject.post('schedule/interview', scheduleData);
+            if (response.data.success) {
+                setSnack({ isShowSnack: true, snackMsg: response.data.message, variant: 'success' });
+                setScheduleData({});
+                setTimeout(()=>{
+                    navigate('/interviews');
+                },[1000])
+            } else {
+                setSnack({ isShowSnack: true, snackMsg: response.data.message, variant: 'warning' });
+            }
+            console.log(response, 'schedule')
+        } catch (err) {
+            setSnack({ isShowSnack: true, snackMsg: 'something went wrong', variant: 'error' })
+        }
+    }
+
     const handleKeyDown = evt => {
         if (["Enter", "Tab"].includes(evt.key)) {
             evt.preventDefault();
@@ -75,7 +106,6 @@ let Schedule_Interview = () => {
         getDevelopers();
     }, [])
 
-    console.log(interviewers)
     return (
         <>
             <Row className="schedule">
@@ -116,16 +146,16 @@ let Schedule_Interview = () => {
                                 </Col>
                                 <Col md={6}>
                                     <label>Select Candidate <span className="required">*</span></label>
-                                    <SelectBox options={developers} onChange={(e) => setScheduleData('candidate', e.target.value)} />
+                                    <SelectBox options={developers} onChange={(e) => handleInputChange('candidate', e.target.value)} />
                                 </Col>
                                 <Col md={6} className='mt-3 schedule__interviewType'>
                                     <label>Interview Type <span className="required">*</span></label>
                                     <SelectBox options={[{ text: 'Select Type' }, { text: 'Google Meet' }]}
-                                        className='select' onChange={(e) => setScheduleData('interviewType', e.target.value)} />
+                                        className='select' onChange={(e) => handleInputChange('interviewType', e.target.value)} />
                                 </Col>
                                 <Col md={6} className='mt-3'>
                                     <label>Select Interviewer <span className="required">*</span></label>
-                                    <SelectBox options={interviewers} onChange={(e) => setScheduleData('interviewer', e.target.value)} />
+                                    <SelectBox options={interviewers} onChange={(e) => handleInputChange('interviewer', e.target.value)} />
                                 </Col>
                                 <Col md={6} className='mt-3'>
                                     <label>Interview Duration <span className="required">*</span></label>
@@ -149,13 +179,14 @@ let Schedule_Interview = () => {
                                 <Col md={6} className='mt-3'>
                                     <label>Date <span className="required">*</span></label>
                                     <div className="">
-                                        <DatePickerF handleChange={(date) => handleInputChange('scheduleDate', date)} />
+                                        <DatePickerF handleChange={(date) => handleInputChange('scheduleDate', date)} selected={scheduleData.scheduleDate} />
                                     </div>
                                 </Col>
                                 <Col md={6} className='mt-3'>
                                     <label>Start Time <span className="required">*</span></label>
                                     <div className="">
-                                        <select className='interview_timing' onChange={(e)=> handleInputChange()}>
+                                        <select className='interview_timing' onChange={(e) => handleInputChange('startTime', e.target.value)}>
+                                            <option value=''>Select</option>
                                             <option value='09:30 AM'>09:00 AM</option>
                                             <option>09:30 AM</option>
                                             <option>10:00 AM</option>
@@ -186,7 +217,7 @@ let Schedule_Interview = () => {
                         <div className="card-footer">
                             <div className="d-flex justify-content-end">
                                 <button type='button' className='login__btn'>Cancel</button>
-                                <button type='button' className='login__btn login__btn--schedule'>Schedule</button>
+                                <button type='button' className='login__btn login__btn--schedule' onClick={scheduleInterview}>Schedule</button>
                             </div>
                         </div>
                     </div>

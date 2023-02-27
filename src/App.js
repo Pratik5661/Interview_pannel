@@ -47,7 +47,7 @@ function App() {
           <Route path='/' element={<CheckAuth />} >
             <Route path='/dashboard' element={<AdminPanel />} />
             <Route path='/profile' element={<UpdateProfile />} />
-            <Route path='/total_Interview' element={<TotalInterview />} />
+            <Route path='/interviews' element={<TotalInterview />} />
             <Route path='/interviewer' element={<Interviewer />} />
             <Route path='/developer_panel' element={<Developer_Panel />} />
             <Route path='/interivew_schedule' element={<Interview_Schedule />} />
