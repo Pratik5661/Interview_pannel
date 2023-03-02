@@ -3,49 +3,47 @@ import TableCmp from "../Shared/Table";
 import { Row, Col, Button } from "react-bootstrap";
 import { axiosObject } from '../Shared/Api';
 import { MdEditNote } from 'react-icons/md'
-import {IoAdd} from 'react-icons/io5'
+import { IoAdd } from 'react-icons/io5'
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";
 
 let TotalInterview = () => {
-  const [interviewers, setInterviewers] = useState([]);
+  const [interviews, setInterviews] = useState([]);
   const navigate = useNavigate();
-  
-  const getInterviewers = useCallback(async () => {
+
+  const getInterviews = useCallback(async () => {
     try {
-      const params = {
-        role: 'Interviewer'
-      }
-      const response = await axiosObject.get('getUsers', { params });
-      if (response.data.status === 'success') {
-        setInterviewers(response.data.data)
+      const response = await axiosObject.get('interviews');
+      if (response.data.success) {
+        setInterviews(response.data.interviews || [])
       } else {
-        setInterviewers([]);
+        setInterviews([]);
       }
     } catch (err) {
-      console.error(getInterviewers.name, err.message);
+      console.error(getInterviews.name, err.message);
     }
   }, [])
 
   useEffect(() => {
-    getInterviewers();
-  }, [getInterviewers])
+    getInterviews();
+  }, [getInterviews])
 
 
   const getTableData = () => (
     {
-      labels: ['S.no.', 'User Id', 'Name', 'Email', 'Skills', 'Register Date', 'Edit'],
-      colData: interviewers.map((data, index) => (
+      labels: ['S.no.', 'Date', 'Start Time', 'Interview Type', 'Duration', 'Candidate', 'Interviewer', 'Skills'],
+      colData: interviews.map((data, index) => (
         {
           key: index,
           colData: {
-            index: index + 1,
-            userId: data.id,
-            name: data.fullName,
-            email: data.email,
-            skills: (data.skills || '').join(', '),
-            date: moment(data.createdAt).format('DD-MM-yyyy hh:mm A'),
-            exit: (<MdEditNote onClick={()=>navigate('/profile')} />)
+            sno: index + 1,
+            date: moment(data.scheduleDate).format('DD-MM-YYYY'),
+            time: data.startTime,
+            type: data.interviewType,
+            duration: `${data.duration} Min`,
+            candidate: data.candidate.fullName,
+            interviewer: data.interviewer.fullName,
+            skills: data.skills.join(', ')
           }
         }
       ))
@@ -56,7 +54,7 @@ let TotalInterview = () => {
     <Row className='mt-3'>
       <Col md={12}>
         <h3 className="mb-3">Interviews List</h3>
-        <Button className="add_interviwer" onClick={()=>navigate('/schedule_interview')}> <IoAdd /> Schedule Interview</Button>
+        <Button className="add_interviwer" onClick={() => navigate('/schedule_interview')}> <IoAdd /> Schedule Interview</Button>
         <TableCmp tableData={getTableData()} />
       </Col>
     </Row>

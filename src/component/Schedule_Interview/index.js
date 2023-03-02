@@ -62,7 +62,7 @@ let Schedule_Interview = () => {
                 return;
             }
             scheduleData['duration'] = Number(scheduleData.duration);
-
+            scheduleData['skills'] = skills;
             const response = await axiosObject.post('schedule/interview', scheduleData);
             if (response.data.success) {
                 setSnack({ isShowSnack: true, snackMsg: response.data.message, variant: 'success' });
