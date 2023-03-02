@@ -16,6 +16,9 @@ import LoginWithGoogle from './component/login with google';
 import BookingSlot from './component/Booking Slot/booking';
 import Slots from './component/Booking Slot/slots';
 import Schedule_Interview from './component/Schedule_Interview';
+import Report from './component/Reports';
+import InterviewsLists from './component/Interviewer Panel/Interviews List';
+import Upcoming_Interviews from './component/Interviewer Panel/upcomingInterviews';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -54,6 +57,9 @@ function App() {
             <Route path='/booking' element={<BookingSlot />} />
             <Route path='slots' element={<Slots />} />
             <Route path='/schedule_interview' element={<Schedule_Interview />} />
+            <Route path='/report' element={<Report />} />
+            <Route path='/interviews_lists' element={<InterviewsLists />} />
+            <Route path='upcoming_interviews' element={<Upcoming_Interviews />} />
           </Route>
           
         </Routes>

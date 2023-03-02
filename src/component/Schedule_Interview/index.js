@@ -67,9 +67,9 @@ let Schedule_Interview = () => {
             if (response.data.success) {
                 setSnack({ isShowSnack: true, snackMsg: response.data.message, variant: 'success' });
                 setScheduleData({});
-                setTimeout(()=>{
+                setTimeout(() => {
                     navigate('/interviews');
-                },[1000])
+                }, [1000])
             } else {
                 setSnack({ isShowSnack: true, snackMsg: response.data.message, variant: 'warning' });
             }
