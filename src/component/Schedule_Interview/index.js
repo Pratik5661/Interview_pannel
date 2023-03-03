@@ -161,9 +161,9 @@ let Schedule_Interview = () => {
                                     <label>Interview Duration <span className="required">*</span></label>
                                     <div className="interview_time">
                                         {
-                                            INTERVIEW_DURATION.map(data => (
+                                            INTERVIEW_DURATION.map((data) => (
                                                 <>
-                                                    <input type='radio' name={data} value={data} style={{ "cursor": "pointer" }} className='form-check-input' onChange={() => handleInputChange('duration', data)} />
+                                                    <input type='radio'  name='data' value='data' style={{ "cursor": "pointer" }} className='form-check-input' onChange={() => handleInputChange('duration', data)} />
                                                     <div className='timing'>{data} Min</div>
                                                 </>
                                             ))
@@ -208,6 +208,24 @@ let Schedule_Interview = () => {
                                             <option>06:00 PM</option>
                                             <option>06:30 PM</option>
                                             <option>07:00 PM</option>
+                                            <option>07:30 PM</option>
+                                            <option>08:00 PM</option>
+                                            <option>08:30 PM</option>
+                                            <option>09:00 PM</option>
+                                            <option>09:30 PM</option>
+                                            <option>10:00 PM</option>
+                                            <option>10:30 PM</option>
+                                            <option>11:00 PM</option>
+                                            <option>11:30 PM</option>
+                                            <option>12:00 AM</option>
+                                            <option>12:30 AM</option>
+                                            <option>01:00 AM</option>
+                                            <option>01:30 AM</option>
+                                            <option>02:00 AM</option>
+                                            <option>02:30 AM</option>
+                                            <option>03:00 AM</option>
+                                            <option>03:30 AM</option>
+                                            <option>04:00 AM</option>
                                         </select>
                                     </div>
                                 </Col>

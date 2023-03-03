@@ -81,28 +81,40 @@ const SideNav = () => {
                         }
                         {
                             user.role === "Developer" || user.role === "Interviewer" && (
-                                <li className="list-item">
-                                    <CgProfile />
-                                    <Link to="/profile">Profile</Link>
-                                </li>
+                                <>
+                                    <li className="list-item">
+                                        <CgProfile />
+                                        <Link to="/profile">Profile</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <SiVirustotal />
+                                        <Link to="/interviews_lists">Interview List</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <MdUpcoming />
+                                        <Link to="/upcoming_interviews">Upcoming <span className="interviews"> Interviews </span></Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <TbReportAnalytics />
+                                        <Link to="/report">Reports</Link>
+                                    </li>
+                                </>
                             )
                         }
-                        <li className="list-item">
+                        
+                        {/* <li className="list-item">
                             <CgProfile />
                             <Link to="/profile">Profile</Link>
-                        </li>
-                        <li className="list-item">
+                        </li> */}
+                        {/* <li className="list-item">
                             <SiVirustotal />
                             <Link to="/interviews_lists">Interview List</Link>
-                        </li>
-                        <li className="list-item">
+                        </li> */}
+                        {/* <li className="list-item">
                             <MdUpcoming />
                             <Link to="/upcoming_interviews">Upcoming <span className="interviews"> Interviews </span></Link>
-                        </li>
-                        <li className="list-item">
-                            <TbReportAnalytics />
-                            <Link to="/report">Reports</Link>
-                        </li>
+                        </li> */}
+
                         <li className="list-item" onClick={() => logout()}>
                             <GiSkills />
                             <Link>Logout</Link>
