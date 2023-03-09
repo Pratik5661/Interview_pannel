@@ -19,6 +19,7 @@ import Schedule_Interview from './component/Schedule_Interview';
 import Report from './component/Reports';
 import InterviewsLists from './component/Interviewer Panel/Interviews List';
 import Upcoming_Interviews from './component/Interviewer Panel/upcomingInterviews';
+import Add_Candidate from './component/Add Candidate';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -59,7 +60,8 @@ function App() {
             <Route path='/schedule_interview' element={<Schedule_Interview />} />
             <Route path='/report' element={<Report />} />
             <Route path='/interviews_lists' element={<InterviewsLists />} />
-            <Route path='upcoming_interviews' element={<Upcoming_Interviews />} />
+            <Route path='/upcoming_interviews' element={<Upcoming_Interviews />} />
+            <Route path='/add_candidate' element={<Add_Candidate />} />
           </Route>
           
         </Routes>

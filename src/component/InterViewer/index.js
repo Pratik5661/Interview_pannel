@@ -5,7 +5,7 @@ import { axiosObject } from '../Shared/Api';
 import { MdEditNote } from 'react-icons/md'
 import moment from 'moment';
 import {IoAdd} from 'react-icons/io5'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './style.scss'
 
 let InterViewer = () => {
@@ -57,7 +57,7 @@ let InterViewer = () => {
     <Row className='mt-3'>
       <Col md={12}>
         <h3 className="mb-3">Interviewers List</h3>
-        <Button className="add_interviwer"><IoAdd /> Add Interviewer</Button>
+        <Button className="add_interviwer"><Link to='/add_candidate' className="add_candidate"><IoAdd /> Add Interviewer</Link></Button>
         <TableCmp className='interviwer_table' tableData={getTableData()} />
       </Col>
     </Row>

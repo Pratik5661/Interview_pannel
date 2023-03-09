@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import CustomToast from "../Shared/Toast";
 import SelectBox from "../Shared/Select";
@@ -145,7 +145,7 @@ let Schedule_Interview = () => {
                                     />
                                 </Col>
                                 <Col md={6}>
-                                    <label>Select Candidate <span className="required">*</span></label>
+                                       <label>Select Candidate <span className="required">*</span></label>
                                     <SelectBox options={developers} onChange={(e) => handleInputChange('candidate', e.target.value)} />
                                 </Col>
                                 <Col md={6} className='mt-3 schedule__interviewType'>

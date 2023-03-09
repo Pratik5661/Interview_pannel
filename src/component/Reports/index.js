@@ -3,7 +3,9 @@ import React from "react";
 let Report = () => {
     return (
         <>
-        h
+        <div>
+            <h1>Report</h1>
+        </div>
         </>
     )
 }
