@@ -139,6 +139,12 @@ const Add_Candidate = () => {
                                             )
                                         }
 
+
+                                        <div className='file mt-3'>
+                                            <span className='resume'>Resume</span>
+                                            <input type="file" id="actual-btn" hidden onChange={uploadFile} />
+                                            <label htmlFor="actual-btn">Choose File</label>
+                                        </div>
                                         <div className='registration__tags'>
                                             {skills.map(skill => (
                                                 <div className="tag-item" key={skill}>
@@ -159,12 +165,6 @@ const Add_Candidate = () => {
                                             placeholder="Type skill and press Enter..."
                                             onKeyDown={handleKeyDown}
                                         />
-                                        <div className='file mt-3'>
-                                            <span className='resume'>Resume</span>
-                                            <input type="file" id="actual-btn" hidden onChange={uploadFile} />
-                                            <label htmlFor="actual-btn">Choose File</label>
-                                        </div>
-
 
 
 
