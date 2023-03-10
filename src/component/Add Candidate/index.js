@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { axiosObject } from '../Shared/Api';
@@ -14,11 +14,13 @@ const formValidation = Yup.object().shape({
     email: Yup.string().email("Invalid email").required('Email is required'),
     role: Yup.string().required('Role is required')
 })
-const Add_Candidate = () => {
+const Add_Candidate = (props) => {
     const [skills, setSkills] = useState([]);
     const [snack, setSnack] = useState({});
     const [resume, setResume] = useState({});
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const pathName = window.location.pathname;
 
     const handleKeyDown = evt => {
         if (["Enter", "Tab"].includes(evt.key)) {
@@ -48,12 +50,28 @@ const Add_Candidate = () => {
                 skills,
                 resume: resume.uploadedFile || ''
             }
+            if (pathName.includes('/add_candidate') && !password) {
+                setSnack({ isShowSnack: true, snackMsg: 'please enter login password', variant: 'warning' });
+                return
+            }
+            if (pathName.includes('/add_candidate')) {
+                payload.password = password;
+                payload.isEmailVerify = true;
+            }
             const { data = {} } = await axiosObject.post(`register`, payload);
             if (data.status === 'success') {
                 setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'success' });
-                setTimeout(() => {
-                    goNext(values.email)
-                }, 1000)
+                if (pathName.includes('/add_candidate')) {
+                    setTimeout(() => {
+                        goNext(values.email)
+                    }, 1000)
+                    navigate('/developer_panel')
+                } else {
+                    setTimeout(() => {
+                        goNext(values.email)
+                    }, 1000)
+                }
+
             }
             else {
                 setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'warning' });
@@ -82,7 +100,7 @@ const Add_Candidate = () => {
         <Row className='registration' style={{ "margin": "0%" }}>
             <Col md={12}>
                 <div className='registration__header'>
-                    <h1 style={{ "fontFamily": "math" }}>Add Candidate</h1>
+                    <h1 style={{ "fontFamily": "math" }}>{pathName.includes('add_candidate') ? 'Add User' : 'New Registration'}</h1>
                 </div>
                 <Row>
                     <Formik
@@ -113,10 +131,13 @@ const Add_Candidate = () => {
                                             <input type="text" placeholder='Email' className='registration__text' name="email" onChange={handleChange} onBlur={handleBlur} />
                                             {errors.email && <div className='validationError_email'>{errors.email}</div>}
                                         </div>
-                                        <div>
-                                            <input type="password" placeholder='Enter password' className='registration__text' name="password" onChange={handleChange} onBlur={handleBlur} />
-                                            {errors.password && touched.password && <div className='validationError ml-3'>{errors.password}</div>}
-                                        </div>
+                                        {
+                                            window.location.pathname.includes('/add_candidate') && (
+                                                <div>
+                                                    <input type="password" placeholder='Enter password' className='registration__text' name="password" onChange={(e) => setPassword(e.target.value)} />
+                                                </div>
+                                            )
+                                        }
 
                                         <div className='mt-2'>
                                             <SelectBox options={[{ text: 'Choose your role' }, { text: 'Interviewer' }, { text: 'Developer' }]} name="role" onChange={handleChange} onBlur={handleBlur} />
