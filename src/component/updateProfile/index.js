@@ -5,20 +5,54 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import './style.scss'
-import {BsCheck2All} from 'react-icons/bs'
+import {BsCheck2All} from 'react-icons/bs';
+import axios from 'axios';
 
 function UpdateProfile() {
   const [validated, setValidated] = useState(false);
+  const [userId, setUserId] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-    }
+      setValidated(true);
+    } else {
+      event.preventDefault();
+      const data = new FormData(form);
+      try {
 
-    setValidated(true);
+        console.log(`http://localhost:3004/api/getUsers/${userId}`);
+        const response = await axios.get(`http://localhost:3004/api/getUsers/${userId}`, {
+          firstName: data.get('firstName'),
+          email: data.get('email'),
+          password: data.get('password'),
+          newPassword: data.get('newPassword'),
+          skills: data.get('skills'),
+          updateSkills: data.get('updateSkills'),
+          experience: data.get('experience'),
+          mobile: data.get('mobile'),
+          alternativeMobile: data.get('alternativeMobile'),
+          address: data.get('address'),
+          alternativeAddress: data.get('alternativeAddress')
+          
+        });
+        
+        const updatedUser = response.data;
+        const userDetailsResponse = await axios.put(`http://localhost:3004/api/updateUser/${userId}`);
+        const userDetails = userDetailsResponse.data;
+        console.log('User details:', userDetails);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
+
+  const handleUserIdChange = (event) => {
+    setUserId(event.target.value);
+  };
+
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -26,7 +60,7 @@ function UpdateProfile() {
         <Form.Group as={Col} md="6" controlId="validationCustom01" >
           <Form.Label  className='form_title'>First name</Form.Label>
           <Form.Control
-            required
+            // required
             type="text"
             placeholder="Enter your name..."
           />
@@ -35,7 +69,7 @@ function UpdateProfile() {
         <Form.Group as={Col} md="6" controlId="validationCustom02">
           <Form.Label className='form_title'>Email</Form.Label>
           <Form.Control
-            required
+            // required
             type="email"
             placeholder="Enter your email"
           />
@@ -48,7 +82,7 @@ function UpdateProfile() {
               type="password"
               placeholder="Enter password..."
               aria-describedby="inputGroupPrepend"
-              required
+              // required
             />
             <Form.Control.Feedback type="invalid">
               Please choose a correct password.
@@ -62,7 +96,7 @@ function UpdateProfile() {
               type="password"
               placeholder="Enter a new password"
               aria-describedby="inputGroupPrepend"
-              required
+              // required
             />
             <Form.Control.Feedback type="invalid">
               Invaild password.
@@ -73,28 +107,28 @@ function UpdateProfile() {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom03" style={{"position" : "relative", "bottom" : "5px"}}>
           <Form.Label className='form_title'>Skills</Form.Label>
-          <Form.Control type="text" placeholder="Skils..." required />
+          <Form.Control type="text" placeholder="Skils..."  />
           <Form.Control.Feedback type="invalid">
             Please provide your Skills.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04" style={{"position" : "relative", "bottom" : "4px"}}>
           <Form.Label className='form_title'>Update Skills</Form.Label>
-          <Form.Control type="text" placeholder="Update skills..." required />
+          <Form.Control type="text" placeholder="Update skills..."  />
           <Form.Control.Feedback type="invalid">
             Please provide your new skills.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label className='form_title'>Experience</Form.Label>
-          <Form.Control type="number" placeholder="Experience..." required />
+          <Form.Control type="number" placeholder="Experience..."  />
           <Form.Control.Feedback type="invalid">
             Experince should in numbers.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom05">
           <Form.Label className='form_title'>Mobile</Form.Label>
-          <Form.Control type="number" placeholder="Enter a mobile number" required />
+          <Form.Control type="number" placeholder="Enter a mobile number"  />
           <Form.Control.Feedback type="invalid">
             Please enter a valid mobile number.
           </Form.Control.Feedback>
@@ -108,7 +142,7 @@ function UpdateProfile() {
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom05">
           <Form.Label className='form_title'>Address</Form.Label>
-          <Form.Control className='form-control' type="text" placeholder="Enter your address" required />
+          <Form.Control className='form-control' type="text" placeholder="Enter your address"  />
           <Form.Control.Feedback type="invalid">
             Please enter your address.
           </Form.Control.Feedback>

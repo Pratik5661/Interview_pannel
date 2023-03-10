@@ -135,6 +135,12 @@
     display: none;
 }
 
+.schedule {
+    position: relative;
+    left: 33px;
+}
+
+
 @media (max-width: 768px) {
     #sidebar.active {
         width: 50px;

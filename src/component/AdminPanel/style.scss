@@ -1,15 +1,19 @@
 @use '../../style/mixins.scss';
 @import '../../style/colors.scss';
 
-.adminPanel{
+
+.adminPanel {
     overflow: hidden;
-    &__heading{
-        @include mixins.page-header(25px,300px);
+
+    &__heading {
+        @include mixins.page-header(25px, 300px);
     }
-    &__container{
+
+    &__container {
         justify-content: space-evenly;
     }
-    &__box{
+
+    &__box {
         background-color: $nav-color;
         padding: 10px;
         border-radius: 0px 15px;
@@ -18,15 +22,18 @@
         justify-content: center;
         align-items: center;
         height: 130px;
-        svg{
+
+        svg {
             color: $colors-white;
             font-size: 30px;
         }
-        &__text{
+
+        &__text {
             color: $colors-white;
             margin-left: 15px;
         }
-        &__count{
+
+        &__count {
             display: flex;
             justify-content: end;
             margin-top: 5px;
