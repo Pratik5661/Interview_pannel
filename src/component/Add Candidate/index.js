@@ -191,13 +191,13 @@ const Add_Candidate = (props) => {
 
                                         <button className='registration__btn mt-3' type='submit'>Submit</button>
                                         {/* <Button
-                      block
-                      variant="danger"
-                      className="mb-3 btn_google"
+                                        block
+                                        variant="danger"
+                                        className="mb-3 btn_google"
 
-                    >
-                      Sign up with Google
-                    </Button> */}
+                                        >
+                                        Sign up with Google
+                                        </Button> */}
                                         {/* <Link to='/verfication' className='registration__btn next_btn mt-3'>Next</Link> */}
                                         {/* <h6 className='mt-3'>Already Registered ? <Link to='/login' className='login_btn'>Log In</Link></h6> */}
                                     </Col>

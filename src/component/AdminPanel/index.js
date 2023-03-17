@@ -28,7 +28,7 @@ const DeveloperPanel = () => {
     return (
         <Row className='adminPanel mt-3 justify-content-center'>
             <Col sm={12} className="d-flex justify-content-center">
-                <div className='adminPanel__heading'>ADMIN PANNEL</div>
+                <div className='adminPanel__heading'>ADMIN PANEL</div>
             </Col>
             <Col sm={12} className="mt-4">
                 <Row className='adminPanel__container'>
@@ -36,7 +36,7 @@ const DeveloperPanel = () => {
                         <div>
                             <div className='d-flex'>
                                 <FaUsers />
-                                <div className='adminPanel__box__text'>Total Developers</div>
+                                <div className='adminPanel__box__text'>Today Interviews</div>
                             </div>
                             <div className='adminPanel__box__text adminPanel__box__count'>{(dashboard.totalDevelopers || []).length>0 ? dashboard.totalDevelopers[0].total : 0}</div>
                         </div>

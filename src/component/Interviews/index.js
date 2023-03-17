@@ -31,7 +31,7 @@ let TotalInterview = () => {
 
   const getTableData = () => (
     {
-      labels: ['S.no.', 'Date', 'Start Time', 'Interview Type', 'Duration', 'Candidate', 'Interviewer', 'Skills'],
+      labels: ['S.no.', 'Date', 'Start Time', 'Interview Type', 'Duration', 'Candidate', 'Interviewer', 'Skills','Status','Edit'],
       colData: interviews.map((data, index) => (
         {
           key: index,
