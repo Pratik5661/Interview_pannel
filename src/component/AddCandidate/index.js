@@ -63,9 +63,8 @@ const Add_Candidate = (props) => {
                 setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'success' });
                 if (pathName.includes('/add_candidate')) {
                     setTimeout(() => {
-                        goNext(values.email)
-                    }, 1000)
-                    navigate('/developer_panel')
+                        navigate('/developer_panel')
+                    }, 2000)
                 } else {
                     setTimeout(() => {
                         goNext(values.email)
@@ -77,7 +76,7 @@ const Add_Candidate = (props) => {
                 setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'warning' });
             }
         } catch (err) {
-            setSnack({ isShowSnack: true, snackMsg: err.response.data.message, variant: 'danger' });
+            setSnack({ isShowSnack: true, snackMsg: err.response.data.message, variant: 'error' });
         }
     }
 

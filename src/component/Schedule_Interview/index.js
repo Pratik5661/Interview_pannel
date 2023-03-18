@@ -163,7 +163,7 @@ let Schedule_Interview = () => {
                                         {
                                             INTERVIEW_DURATION.map((data) => (
                                                 <>
-                                                    <input type='radio'  name='data' value='data' style={{ "cursor": "pointer" }} className='form-check-input' onChange={() => handleInputChange('duration', data)} />
+                                                    <input type='radio'  name='data' value='data' style={{ "cursor": "pointer" }} className='form-check-input' onChange={() => handleInputChange('duration', data)} checked={data === Number(scheduleData.duration)} />
                                                     <div className='timing'>{data} Min</div>
                                                 </>
                                             ))
@@ -173,7 +173,7 @@ let Schedule_Interview = () => {
                                 <Col md={6} className='mt-3'>
                                     <label>Custom Duration</label>
                                     <div className="">
-                                        <input type='number' min='0' className='form-control' onChange={(e) => handleInputChange('duration', e.target.value)} />
+                                        <input type='number' min='0' className='form-control' onChange={(e) => handleInputChange('duration', e.target.value)} value={scheduleData.duration} />
                                     </div>
                                 </Col>
                                 <Col md={6} className='mt-3'>

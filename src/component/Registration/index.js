@@ -60,7 +60,7 @@ const Registration = () => {
         setSnack({ isShowSnack: true, snackMsg: data.message, variant: 'warning' });
       }
     } catch (err) {
-      setSnack({ isShowSnack: true, snackMsg: err.response.data.message, variant: 'danger' });
+      setSnack({ isShowSnack: true, snackMsg: err.response.data.message, variant: 'error' });
     }
   }
 
