@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import DatePicker from './datePicker';
 import {Row, Col} from 'react-bootstrap'
-
+import ResponsiveTimePickers from './timePicker';
 import './style.scss'
 
 function Interview_Schedule() {

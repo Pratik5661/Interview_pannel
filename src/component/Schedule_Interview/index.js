@@ -5,7 +5,9 @@ import CustomToast from "../Shared/Toast";
 import SelectBox from "../Shared/Select";
 import { axiosObject } from '../../component/Shared/Api';
 import DatePickerF from "../interview_schedule/datePicker";
+import NewDatePicker from "../interview_schedule/datePicker";
 import { INTERVIEW_DURATION } from '../../constant';
+import ResponsiveTimePickers from "../interview_schedule/timePicker";
 import './style.scss'
 
 let Schedule_Interview = () => {
@@ -176,15 +178,20 @@ let Schedule_Interview = () => {
                                         <input type='number' min='0' className='form-control' onChange={(e) => handleInputChange('duration', e.target.value)} />
                                     </div>
                                 </Col>
-                                <Col md={6} className='mt-3'>
-                                    <label>Date <span className="required">*</span></label>
-                                    <div className="">
-                                        <DatePickerF handleChange={(date) => handleInputChange('scheduleDate', date)} selected={scheduleData.scheduleDate} />
+                                <Col md={6} className='mt-3' style={{"position" : "relative", "top" :"5px"}}>
+                                    <label>Select Date <span className="required">*</span></label>
+                                    <div >
+                                        {/* <DatePickerF style={{"height" : "50px"}} handleChange={(date) => handleInputChange('scheduleDate', date)} selected={scheduleData.scheduleDate} /> */}
+                                        <NewDatePicker />
                                     </div>
                                 </Col>
                                 <Col md={6} className='mt-3'>
-                                    <label>Start Time <span className="required">*</span></label>
-                                    <div className="">
+                                    <label>Select Time <span className="required">*</span></label>
+                                    <div>
+                                        <ResponsiveTimePickers />
+                                    </div>
+
+                                    {/* <div className="">
                                         <select className='interview_timing' onChange={(e) => handleInputChange('startTime', e.target.value)}>
                                             <option value=''>Select</option>
                                             <option value='09:30 AM'>09:00 AM</option>
@@ -227,7 +234,7 @@ let Schedule_Interview = () => {
                                             <option>03:30 AM</option>
                                             <option>04:00 AM</option>
                                         </select>
-                                    </div>
+                                    </div> */}
                                 </Col>
                             </Row>
                         </div>
