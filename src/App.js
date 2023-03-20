@@ -19,7 +19,7 @@ import Schedule_Interview from './component/Schedule_Interview';
 import Report from './component/Reports';
 import InterviewsLists from './component/Interviewer Panel/Interviews List';
 import Upcoming_Interviews from './component/Interviewer Panel/upcomingInterviews';
-import Add_Candidate from './component/Add Candidate';
+import Add_Candidate from './component/AddCandidate';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
