@@ -1,13 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import DatePicker from './datePicker';
-<<<<<<< HEAD
 import {Row, Col} from 'react-bootstrap'
 import ResponsiveTimePickers from './timePicker';
-=======
-import { Row, Col } from 'react-bootstrap'
-
->>>>>>> fa2ecb6c7bb5ca36a3ef8eec769c2a3a3c8b882d
 import './style.scss'
 
 function Interview_Schedule() {
