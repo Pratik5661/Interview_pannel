@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaUserCircle } from 'react-icons/fa'
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { axiosObject } from '../Shared/Api';
@@ -83,6 +84,14 @@ const Login = () => {
                     </div>
 
                     <button type='submit' className='login__btn'>Login</button>
+                    <Button
+                      block
+                      variant="danger"
+                      className="mb-3 btn_google"
+
+                    >
+                      Login with Google
+                    </Button>
                     <div>
                       <h6 className='mt-3'>Don't have account an ? <Link to='/registration' className='signup_btn'>Sign Up</Link></h6>
                     </div>

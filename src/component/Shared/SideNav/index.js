@@ -6,9 +6,10 @@ import { MdDashboard, MdPendingActions } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { SiVirustotal } from 'react-icons/si'
 import { GiSkills } from 'react-icons/gi'
-import {AiFillSchedule} from 'react-icons/ai'
-// import {GrDocumentUpdate} from 'react-icons/gr'
-// import image from "../../../assets/React-icon.svg.png";
+import { MdUpcoming } from 'react-icons/md'
+import { TbReportAnalytics } from 'react-icons/tb'
+import { AiFillSchedule } from 'react-icons/ai'
+import { IoPeopleSharp } from 'react-icons/io5'
 
 import './style.scss';
 
@@ -19,6 +20,7 @@ const SideNav = () => {
     var crossIcon = <i className="fas fa-times-circle"></i>
     let user = localStorage.getItem('user');
     user = JSON.parse(user);
+    console.log(user.role)
 
     const logout = () => {
         localStorage.clear();
@@ -51,31 +53,68 @@ const SideNav = () => {
                                     </li>
                                     <li className="list-item">
                                         <SiVirustotal />
-                                        <Link to="/total_Interview">Interviews</Link>
+                                        <Link to="/interviews">Interviews</Link>
                                     </li>
                                     <li className="list-item">
                                         <MdPendingActions />
                                         <Link to="/interviewer">Interviewer</Link>
                                     </li>
                                     <li className="list-item">
-                                        <MdPendingActions />
-                                        <Link to="/developer_panel">Developers</Link>
+                                        <IoPeopleSharp />
+                                        <Link to="/developer_panel">Candidate's</Link>
                                     </li>
-                                    <li className="list-item">
+                                    {/* <li className="list-item">
                                         <AiFillSchedule />
                                         <Link to="/interivew_schedule">Interview Schedule</Link>
+                                    </li> */}
+
+                                    <li className="list-item">
+                                        <AiFillSchedule />
+                                        <Link to="/schedule_interview">Interview <p className="schedule">Schedule</p></Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <TbReportAnalytics />
+                                        <Link to="/report">Reports</Link>
                                     </li>
                                 </>
                             )
                         }
                         {
                             user.role === "Developer" || user.role === "Interviewer" && (
-                                <li className="list-item">
-                                    <CgProfile />
-                                    <Link to="/profile">Profile</Link>
-                                </li>
+                                <>
+                                    <li className="list-item">
+                                        <CgProfile />
+                                        <Link to="/profile">Profile</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <SiVirustotal />
+                                        <Link to="/interviews_lists">Interview List</Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <MdUpcoming />
+                                        <Link to="/upcoming_interviews">Upcoming <span className="interviews"> Interviews </span></Link>
+                                    </li>
+                                    <li className="list-item">
+                                        <TbReportAnalytics />
+                                        <Link to="/report">Reports</Link>
+                                    </li>
+                                </>
                             )
                         }
+                        
+                        {/* <li className="list-item">
+                            <CgProfile />
+                            <Link to="/profile">Profile</Link>
+                        </li> */}
+                        {/* <li className="list-item">
+                            <SiVirustotal />
+                            <Link to="/interviews_lists">Interview List</Link>
+                        </li> */}
+                        {/* <li className="list-item">
+                            <MdUpcoming />
+                            <Link to="/upcoming_interviews">Upcoming <span className="interviews"> Interviews </span></Link>
+                        </li> */}
+
                         <li className="list-item" onClick={() => logout()}>
                             <GiSkills />
                             <Link>Logout</Link>
@@ -84,30 +123,6 @@ const SideNav = () => {
                 </nav>
             </div>
         </div>
-        // <Row className="sidenav">
-        //     <Col md={12}>
-        //         <div className="sidenav__avtar"><FaUserCircle /></div>
-
-        //         <div className="sidenav__navs">
-        //             <Nav defaultActiveKey="/home" className="flex-column">
-        //                 <Nav.Link href="/admin/dashboard">
-        //                     <MdDashboard /> Dashboard
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-1" href="/admin/update_profile">
-        //                     <CgProfile />Update Profile</Nav.Link>
-        //                 <Nav.Link eventKey="link-2"  href="/admin/total_Interview">
-        //                     <SiVirustotal /> Total Inteview
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-2" href="/admin/interviewer">
-        //                     <MdPendingActions /> Interviewer
-        //                 </Nav.Link>
-        //                 <Nav.Link eventKey="link-2">
-        //                     <GiSkills /> Skills
-        //                 </Nav.Link>
-        //             </Nav>
-        //         </div>
-        //     </Col>
-        // </Row>
     )
 }
 

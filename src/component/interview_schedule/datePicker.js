@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import * as React from 'react';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-import "react-datepicker/dist/react-datepicker.css";
-
-const DatePickerF = () => {
-  const [startDate, setStartDate] = useState(new Date());
+export default function CustomDatePicker({handleChange}) {
   return (
-    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DatePicker onChange={handleChange} />
+    </LocalizationProvider>
   );
-};
-
-export default DatePickerF
+}

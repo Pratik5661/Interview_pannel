@@ -1,0 +1,144 @@
+@use '../../style/mixins.scss';
+@import '../../style/colors.scss';
+
+.schedule {
+    &__interviewType {
+        .form-select {
+            width: 80%;
+        }
+    }
+
+    .required {
+        color: $colors-error;
+    }
+
+    .login__btn--schedule {
+        margin-left: 10px;
+    }
+
+
+
+    .skills__text {
+        width: 80%;
+        height: 2.8rem;
+        border-radius: 0px 15px;
+        border-color: rgb(146, 146, 240);
+        border: 1.5px;
+        outline: 0;
+        padding: 1rem;
+        border: 1px solid #8f8787;
+
+        // margin: $margin;
+        &::placeholder {
+            font-size: 1.2rem;
+            font-family: Imprima;
+            color: #AEADAD;
+        }
+    }
+
+    .skills__tags {
+        display: flex;
+        position: relative;
+    }
+
+    .skills-item {
+        background-color: #d4d5d6;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 30px;
+        height: 30px;
+        padding: 0 4px 0 1rem;
+        display: inline-flex;
+        align-items: center;
+        margin: 0 0.3rem 0.3rem 0;
+    }
+
+    .skills_button {
+        background: none;
+        border: none;
+        margin-left: 5px;
+        font-size: 15px;
+        color: black;
+        line-height: 20px;
+    }
+}
+
+.heading {
+    font-family: 'Itim';
+    position: relative;
+    right: 3rem;
+}
+
+.form-select {
+    font-family: Imprima;
+    color: #AEADAD;
+    cursor: pointer;
+
+    >option {
+        font-size: 1.2rem;
+        font-family: Imprima;
+        color: #AEADAD;
+        cursor: pointer;
+
+    }
+}
+
+
+label {
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-family: Imprima;
+}
+
+.skills_name {
+    position: relative;
+    top: 2.2rem;
+}
+
+.candidate_input {
+    width: 40%;
+}
+
+.interview_time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18em;
+    margin-right: 1rem;
+    // cursor: pointer;
+
+    .timing {
+        cursor: pointer;
+    }
+}
+
+
+.interview_timing {
+    width: 10rem;
+    height: 2rem;
+    font-family: sans-serif;
+    // cursor: pointer;
+}
+
+.schedule_interview {
+    float: right;
+    margin-right: 5rem;
+    margin-top: 3rem;
+}
+
+.card {
+    position: relative;
+    top: 2rem;
+    right: 2rem;
+}
+
+.cancel_btn {
+    background-color: red;
+    color: white;
+    margin-left: 2rem;
+    border: 0;
+
+    &:hover {
+        background-color: red;
+    }
+}

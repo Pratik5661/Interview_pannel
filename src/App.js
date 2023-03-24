@@ -14,6 +14,12 @@ import ForgetPassword from './component/Login/forgetPassword';
 import Interview_Schedule from './component/interview_schedule';
 import LoginWithGoogle from './component/login with google';
 import BookingSlot from './component/Booking Slot/booking';
+import Slots from './component/Booking Slot/slots';
+import Schedule_Interview from './component/Schedule_Interview';
+import Report from './component/Reports';
+import InterviewsLists from './component/Interviewer Panel/Interviews List';
+import Upcoming_Interviews from './component/Interviewer Panel/upcomingInterviews';
+import Add_Candidate from './component/AddCandidate';
 
 const CheckAuth = () => {
   const navigate = useNavigate();
@@ -45,13 +51,19 @@ function App() {
           <Route path='/' element={<CheckAuth />} >
             <Route path='/dashboard' element={<AdminPanel />} />
             <Route path='/profile' element={<UpdateProfile />} />
-            <Route path='/total_Interview' element={<TotalInterview />} />
+            <Route path='/interviews' element={<TotalInterview />} />
             <Route path='/interviewer' element={<Interviewer />} />
             <Route path='/developer_panel' element={<Developer_Panel />} />
             <Route path='/interivew_schedule' element={<Interview_Schedule />} />
             <Route path='/booking' element={<BookingSlot />} />
+            <Route path='slots' element={<Slots />} />
+            <Route path='/schedule_interview' element={<Schedule_Interview />} />
+            <Route path='/report' element={<Report />} />
+            <Route path='/interviews_lists' element={<InterviewsLists />} />
+            <Route path='/upcoming_interviews' element={<Upcoming_Interviews />} />
+            <Route path='/add_candidate' element={<Add_Candidate />} />
           </Route>
-
+          
         </Routes>
       </Router>
     </>

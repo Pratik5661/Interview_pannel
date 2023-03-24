@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 const TableCmp = ({ tableData = {} }) => {
   return (
     <>
-      <Table bordered hover variant='light' className='table table-striped'>
+      <Table bordered hover variant='light' className='table table-striped' style={{marginTop:"5rem"}}>
         <thead>
           <tr>
             {
