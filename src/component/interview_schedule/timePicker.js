@@ -6,7 +6,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MobileTimePicker } from '@mui/x-date-pickers/MobileTimePicker';
 
 
-export default function ResponsiveTimePickers() {
+export default function ResponsiveTimePickers({handleChange}) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer
@@ -15,7 +15,7 @@ export default function ResponsiveTimePickers() {
         ]}
       >
         <DemoItem>
-          <MobileTimePicker defaultValue={dayjs('2022-04-17T15:30')} />
+          <MobileTimePicker defaultValue={null} onChange={handleChange} />
         </DemoItem>
 
       </DemoContainer>

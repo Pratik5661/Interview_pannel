@@ -41,9 +41,10 @@ let TotalInterview = () => {
             time: data.startTime,
             type: data.interviewType,
             duration: `${data.duration} Min`,
-            candidate: data.candidate.fullName,
-            interviewer: data.interviewer.fullName,
-            skills: data.skills.join(', ')
+            candidate: data.candidate ? data.candidate.fullName : '',
+            interviewer: data.interviewer ? data.interviewer.fullName : '',
+            skills: data.skills.join(', '),
+            status: data.status
           }
         }
       ))

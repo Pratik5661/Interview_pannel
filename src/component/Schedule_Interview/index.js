@@ -5,10 +5,11 @@ import CustomToast from "../Shared/Toast";
 import SelectBox from "../Shared/Select";
 import { axiosObject } from '../../component/Shared/Api';
 import DatePickerF from "../interview_schedule/datePicker";
-import NewDatePicker from "../interview_schedule/datePicker";
+import CustomDatePicker from "../interview_schedule/datePicker";
 import { INTERVIEW_DURATION } from '../../constant';
 import ResponsiveTimePickers from "../interview_schedule/timePicker";
 import './style.scss'
+import moment from "moment";
 
 let Schedule_Interview = () => {
     const [skills, setSkills] = useState([]);
@@ -182,13 +183,13 @@ let Schedule_Interview = () => {
                                     <label>Select Date <span className="required">*</span></label>
                                     <div >
                                         {/* <DatePickerF style={{"height" : "50px"}} handleChange={(date) => handleInputChange('scheduleDate', date)} selected={scheduleData.scheduleDate} /> */}
-                                        <NewDatePicker />
+                                        <CustomDatePicker handleChange={(date) => handleInputChange('scheduleDate', date.$d)} />
                                     </div>
                                 </Col>
                                 <Col md={6} className='mt-3'>
                                     <label>Select Time <span className="required">*</span></label>
                                     <div>
-                                        <ResponsiveTimePickers />
+                                        <ResponsiveTimePickers handleChange={(value)=> handleInputChange('startTime',value ? moment(value.$d).format('hh:mm a') : null)} />
                                     </div>
 
                                     {/* <div className="">
